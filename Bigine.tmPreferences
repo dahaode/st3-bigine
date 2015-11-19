@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>scope</key>
+	<string>text.bigine</string>
+	<key>settings</key>
+	<dict>
+		<key>increaseIndentPattern</key>
+		<string>^(人物|房间|地图|音[乐效]|特写|事件|\t(姿态|时刻|交互点|条件|内容|\t+(选择|最[大小]数据|且|或|那么|否则|循环|如果(|数据))))(?=（|：|$)</string>
+	</dict>
+</dict>
+</plist>

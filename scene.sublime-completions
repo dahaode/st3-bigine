@@ -1,0 +1,8 @@
+{
+    "scope": "meta.scene.bigine - meta.scene.conditions.bigine - meta.scene.content.bigine",
+    "completions": [
+        { "trigger": "类型", "contents": "类型：${1:${2:进入}（${3:房间}）${4:后}}" },
+        { "trigger": "条件", "contents": "条件：" },
+        { "trigger": "内容", "contents": "内容：" }
+    ]
+}

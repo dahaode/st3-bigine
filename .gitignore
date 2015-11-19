@@ -8,4 +8,5 @@
 !Bigine.YAML-tmLanguage
 !Bigine.YAML-tmPreferences
 
+!*.sublime-completions
 !*.sublime-snippet

@@ -686,7 +686,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>^(?=\S)</string>
+			<string>^(?=$|\S)</string>
 			<key>name</key>
 			<string>meta.scene.bigine</string>
 			<key>patterns</key>
@@ -736,7 +736,7 @@
 					<key>comment</key>
 					<string>scene conditions</string>
 					<key>end</key>
-					<string>^(?=\t?\S)</string>
+					<string>^(?=$|\t?\S)</string>
 					<key>name</key>
 					<string>meta.scene.conditions.bigine</string>
 					<key>patterns</key>
@@ -761,7 +761,7 @@
 					<key>comment</key>
 					<string>scene content</string>
 					<key>end</key>
-					<string>^(?=\t?\S)</string>
+					<string>^(?=$|\t?\S)</string>
 					<key>name</key>
 					<string>meta.scene.content.bigine</string>
 					<key>patterns</key>
@@ -781,9 +781,9 @@
 		<key>struct</key>
 		<dict>
 			<key>begin</key>
-			<string>^(?=\S)</string>
+			<string>^(?=$|\S)</string>
 			<key>end</key>
-			<string>^(?=\S)</string>
+			<string>^(?=$|\S)</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -919,7 +919,7 @@
 					<key>comment</key>
 					<string>character</string>
 					<key>end</key>
-					<string>^(?=\S)</string>
+					<string>^(?=$|\S)</string>
 					<key>name</key>
 					<string>meta.char.bigine</string>
 					<key>patterns</key>
@@ -960,7 +960,7 @@
 								</dict>
 							</dict>
 							<key>end</key>
-							<string>^(?=\t?\S)</string>
+							<string>^(?=$|\t?\S)</string>
 							<key>name</key>
 							<string>meta.char.poses.bigine</string>
 							<key>patterns</key>
@@ -1011,7 +1011,7 @@
 					<key>comment</key>
 					<string>room</string>
 					<key>end</key>
-					<string>^(?=\S)</string>
+					<string>^(?=$|\S)</string>
 					<key>name</key>
 					<string>meta.room.bigine</string>
 					<key>patterns</key>
@@ -1052,7 +1052,7 @@
 								</dict>
 							</dict>
 							<key>end</key>
-							<string>^(?=\t?\S)</string>
+							<string>^(?=$|\t?\S)</string>
 							<key>name</key>
 							<string>meta.char.snaps.bigine</string>
 							<key>patterns</key>
@@ -1103,7 +1103,7 @@
 					<key>comment</key>
 					<string>map</string>
 					<key>end</key>
-					<string>^(?=\S)</string>
+					<string>^(?=$|\S)</string>
 					<key>name</key>
 					<string>meta.map.bigine</string>
 					<key>patterns</key>
@@ -1164,7 +1164,7 @@
 								</dict>
 							</dict>
 							<key>end</key>
-							<string>^(?=\t?\S)</string>
+							<string>^(?=$|\t?\S)</string>
 							<key>name</key>
 							<string>meta.map.point.bigine</string>
 							<key>patterns</key>
@@ -1297,7 +1297,7 @@
 					<key>comment</key>
 					<string>sound</string>
 					<key>end</key>
-					<string>^(?=\S)</string>
+					<string>^(?=$|\S)</string>
 					<key>name</key>
 					<string>meta.sound.bigine</string>
 					<key>patterns</key>
@@ -1356,7 +1356,7 @@
 					<key>comment</key>
 					<string>cg</string>
 					<key>end</key>
-					<string>^(?=\S)</string>
+					<string>^(?=$|\S)</string>
 					<key>name</key>
 					<string>meta.cg.bigine</string>
 					<key>patterns</key>

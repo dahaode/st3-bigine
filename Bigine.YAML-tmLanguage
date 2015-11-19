@@ -22,8 +22,8 @@ repository:
       '4': {name: invalid.illegal.bigine}
 
   struct:
-    begin: ^(?=\S)
-    end: ^(?=\S)
+    begin: ^(?=$|\S)
+    end: ^(?=$|\S)
     patterns:
     - comment: resource suite
       match: ^(素材包)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))$
@@ -54,7 +54,7 @@ repository:
         '3': {name: invalid.illegal.bigine}
     - comment: character
       begin: ^(人物)(?:|（([^，\s]+)）|(（.*）))(?:：(\S+)|(：.*))$
-      end: ^(?=\S)
+      end: ^(?=$|\S)
       name: meta.char.bigine
       beginCaptures:
         '1': {name: storage.type.bigine}
@@ -70,7 +70,7 @@ repository:
           '2': {name: constant.language.bigine}
           '3': {name: invalid.illegal.bigine}
       - begin: ^\t(姿态)：?$
-        end: ^(?=\t?\S)
+        end: ^(?=$|\t?\S)
         name: meta.char.poses.bigine
         beginCaptures:
           '1': {name: storage.modifier.bigine}
@@ -79,7 +79,7 @@ repository:
       - include: '#illegal'
     - comment: room
       begin: ^(房间)(?:|（([^，\s]+)）|(（.*）))(?:：(\S+)|(：.*))$
-      end: ^(?=\S)
+      end: ^(?=$|\S)
       name: meta.room.bigine
       beginCaptures:
         '1': {name: storage.type.bigine}
@@ -95,7 +95,7 @@ repository:
           '2': {name: entity.other.inherited-class.bigine}
           '3': {name: invalid.illegal.bigine}
       - begin: ^\t(时刻)：?$
-        end: ^(?=\t?\S)
+        end: ^(?=$|\t?\S)
         name: meta.char.snaps.bigine
         beginCaptures:
           '1': {name: storage.modifier.bigine}
@@ -104,7 +104,7 @@ repository:
       - include: '#illegal'
     - comment: map
       begin: ^(地图)(?:|（([^，\s]+)）|(（.*）))(?:：(\S+)|(：.*))$
-      end: ^(?=\S)
+      end: ^(?=$|\S)
       name: meta.map.bigine
       beginCaptures:
         '1': {name: storage.type.bigine}
@@ -120,7 +120,7 @@ repository:
           '2': {name: constant.language.bigine}
           '3': {name: invalid.illegal.bigine}
       - begin: ^\t(交互点)(?:|（([^，\s]+)）|(（.*）))(?:：(\S+)|(：.*))$
-        end: ^(?=\t?\S)
+        end: ^(?=$|\t?\S)
         name: meta.map.point.bigine
         beginCaptures:
           '1': {name: storage.modifier.bigine}
@@ -155,7 +155,7 @@ repository:
       - include: '#illegal'
     - comment: sound
       begin: ^(音乐|音效)(?:：(\S+)|(：.*))$
-      end: ^(?=\S)
+      end: ^(?=$|\S)
       name: meta.sound.bigine
       beginCaptures:
         '1': {name: storage.type.bigine}
@@ -171,7 +171,7 @@ repository:
       - include: '#illegal'
     - comment: cg
       begin: ^(特写)(?:：(\S+)|(：.*))$
-      end: ^(?=\S)
+      end: ^(?=$|\S)
       name: meta.cg.bigine
       beginCaptures:
         '1': {name: storage.type.bigine}
@@ -354,7 +354,7 @@ repository:
 
   scene:
     begin: ^(事件)(?:：(\S+)|(：.*))$
-    end: ^(?=\S)
+    end: ^(?=$|\S)
     name: meta.scene.bigine
     beginCaptures:
       '1': {name: storage.type.bigine}
@@ -371,7 +371,7 @@ repository:
         '4': {name: invalid.illegal.bigine}
     - comment: scene conditions
       begin: ^\t(条件)：?$
-      end: ^(?=\t?\S)
+      end: ^(?=$|\t?\S)
       name: meta.scene.conditions.bigine
       beginCaptures:
         '1': {name: storage.modifier.bigine}
@@ -379,7 +379,7 @@ repository:
       - include: '#action'
     - comment: scene content
       begin: ^\t(内容)：?$
-      end: ^(?=\t?\S)
+      end: ^(?=$|\t?\S)
       name: meta.scene.content.bigine
       beginCaptures:
         '1': {name: storage.modifier.bigine}

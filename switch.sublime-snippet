@@ -1,12 +1,11 @@
 <snippet>
 	<content><![CDATA[
 对比数据（$1）
-如果（${2:1}）：
-	$4
-如果（${3:2}）：
+如果（$2）：
+	$0
 否则：
 ]]></content>
 	<tabTrigger>对比</tabTrigger>
 	<scope>text.bigine meta.scene.content.bigine</scope>
-	<description>Bigine: 对比数据</description>
+	<description>对比数据…如果…</description>
 </snippet>

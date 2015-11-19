@@ -7,9 +7,9 @@
 事件：${3:开场}
 	类型：开始时
 	内容：
-		$4
+		$0
 ]]></content>
 	<tabTrigger>：</tabTrigger>
 	<scope>text.bigine - meta</scope>
-	<description>Bigine: 新建作品脚本</description>
+	<description>新建作品脚本</description>
 </snippet>

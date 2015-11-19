@@ -2,10 +2,10 @@
 	<content><![CDATA[
 当数据（$1，$2${3:，${4:不等于}}）
 那么：
-	$5
+	$0
 否则：
 ]]></content>
 	<tabTrigger>当</tabTrigger>
 	<scope>text.bigine meta.scene.content.bigine</scope>
-	<description>Bigine: 当数据</description>
+	<description>当数据…那么…</description>
 </snippet>

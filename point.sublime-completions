@@ -1,0 +1,8 @@
+{
+    "scope": "meta.map.point.bigine",
+    "completions": [
+        { "trigger": "高亮", "contents": "高亮：" },
+        { "trigger": "对应房间", "contents": "对应房间：" },
+        { "trigger": "区域", "contents": "区域：" }
+    ]
+}

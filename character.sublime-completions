@@ -1,0 +1,7 @@
+{
+    "scope": "meta.char.bigine - meta.char.poses.bigine",
+    "completions": [
+        { "trigger": "头像", "contents": "头像：" },
+        { "trigger": "姿态", "contents": "姿态：" }
+    ]
+}

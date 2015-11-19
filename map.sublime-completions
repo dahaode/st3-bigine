@@ -1,0 +1,7 @@
+{
+    "scope": "meta.map.bigine - meta.map.point.bigine",
+    "completions": [
+        { "trigger": "底图", "contents": "底图：" },
+        { "trigger": "交互点", "contents": "交互点${1:（$2）}：" }
+    ]
+}

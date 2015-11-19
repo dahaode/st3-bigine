@@ -1,0 +1,6 @@
+{
+    "scope": "meta.sound.bigine",
+    "completions": [
+        { "trigger": "音源", "contents": "音源：" }
+    ]
+}

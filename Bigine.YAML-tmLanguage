@@ -337,10 +337,10 @@ repository:
         captures:
           '1': {name: meta.words.content.hilite.bigine}
       - match: 〈(\S+?)〉|＜(\S+?)＞
-        name: variable.other.bigine
+        name: string.interpolated.bigine
         captures:
-          '1': {name: meta.words.content.state.bigine}
-          '2': {name: meta.words.content.state.bigine}
+          '1': {name: variable.other.bigine}
+          '2': {name: variable.other.bigine}
 
   action:
     patterns:

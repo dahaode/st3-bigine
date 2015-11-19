@@ -591,18 +591,18 @@
 								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>meta.words.content.state.bigine</string>
+									<string>variable.other.bigine</string>
 								</dict>
 								<key>2</key>
 								<dict>
 									<key>name</key>
-									<string>meta.words.content.state.bigine</string>
+									<string>variable.other.bigine</string>
 								</dict>
 							</dict>
 							<key>match</key>
 							<string>〈(\S+?)〉|＜(\S+?)＞</string>
 							<key>name</key>
-							<string>variable.other.bigine</string>
+							<string>string.interpolated.bigine</string>
 						</dict>
 					</array>
 				</dict>

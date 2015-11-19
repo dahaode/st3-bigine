@@ -10,6 +10,6 @@
 		$4
 ]]></content>
 	<tabTrigger>：</tabTrigger>
-	<scope>text.bigine</scope>
+	<scope>text.bigine - meta</scope>
 	<description>Bigine: 新建作品脚本</description>
 </snippet>

@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+素材包：$1
+
+主题：${2:dahao}
+
+事件：${3:开场}
+	类型：开始时
+	内容：
+		$4
+]]></content>
+	<tabTrigger>：</tabTrigger>
+	<scope>text.bigine</scope>
+	<description>Bigine: 新建作品脚本</description>
+</snippet>

@@ -342,7 +342,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.operator.bigine</string>
+							<string>keyword.control.bigine</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -354,7 +354,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.operator.bigine</string>
+							<string>keyword.control.bigine</string>
 						</dict>
 						<key>2</key>
 						<dict>

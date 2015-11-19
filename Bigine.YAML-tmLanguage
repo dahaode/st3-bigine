@@ -303,10 +303,10 @@ repository:
         '3': {name: invalid.illegal.bigine}
     - match: ^\t+(关闭特写|移动中止)：?$
       captures:
-        '1': {name: keyword.operator.bigine}
+        '1': {name: keyword.control.bigine}
     - match: ^\t+(人物移动)(?:（([^，\s]+)）|(（.*）))(?:：([左中右])|(：.*))$
       captures:
-        '1': {name: keyword.operator.bigine}
+        '1': {name: keyword.control.bigine}
         '2': {name: entity.other.inherited-class.bigine}
         '3': {name: invalid.illegal.bigine}
         '4': {name: constant.language.bigine}

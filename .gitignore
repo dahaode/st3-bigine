@@ -1,0 +1,7 @@
+*.*
+
+!.gitignore
+
+!Bigine.sublime-settings
+!Bigine.tmLanguage
+!Bigine.YAML-tmLanguage

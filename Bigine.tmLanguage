@@ -1155,7 +1155,7 @@
 								<key>4</key>
 								<dict>
 									<key>name</key>
-									<string>entity.name.type.bigine</string>
+									<string>entity.other.attribute-name.bigine</string>
 								</dict>
 								<key>5</key>
 								<dict>

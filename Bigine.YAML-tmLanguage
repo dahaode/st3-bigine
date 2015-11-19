@@ -126,7 +126,7 @@ repository:
           '1': {name: storage.modifier.bigine}
           '2': {name: entity.other.inherited-class.bigine}
           '3': {name: invalid.illegal.bigine}
-          '4': {name: entity.name.type.bigine}
+          '4': {name: entity.other.attribute-name.bigine}
           '5': {name: invalid.illegal.bigine}
         patterns:
         - match: ^\t\t(高亮)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))$

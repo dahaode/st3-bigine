@@ -1,8 +1,8 @@
 <snippet>
 	<content><![CDATA[
 当数据（$1，$2${3:，${4:不等于}}）
-那么（${5:真}）：
-	$6
+那么：
+	$5
 否则：
 ]]></content>
 	<tabTrigger>当</tabTrigger>

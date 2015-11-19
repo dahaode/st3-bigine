@@ -1,0 +1,16 @@
+{
+    "scope": "text.bigine - meta",
+    "completions": [
+        { "trigger": "素材包", "contents": "素材包：" },
+        { "trigger": "主题", "contents": "主题：" },
+        "自动播放",
+        { "trigger": "主角", "contents": "主角：" },
+        { "trigger": "人物", "contents": "人物${1:（$2）}：" },
+        { "trigger": "房间", "contents": "房间${1:（$2）}：" },
+        { "trigger": "地图", "contents": "地图${1:（$2）}：" },
+        { "trigger": "音乐", "contents": "音乐：" },
+        { "trigger": "音效", "contents": "音效：" },
+        { "trigger": "特写", "contents": "特写：" },
+        { "trigger": "事件", "contents": "事件：" },
+    ]
+}

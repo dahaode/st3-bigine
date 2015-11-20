@@ -68,55 +68,76 @@
 		</dict>
 		<key>block</key>
 		<dict>
-			<key>begin</key>
-			<string>^(\t+)(?:(且|或|那么|否则|循环)|(如果)(?:（([^，\s](?:|[^，]*[^，\s]))）|(（.*）))|(如果数据)(?:（([^，\s]+)）|(（.*）)))：?$</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.bigine</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.bigine</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>constant.character.bigine</string>
-				</dict>
-				<key>5</key>
-				<dict>
-					<key>name</key>
-					<string>invalid.illegal.bigine</string>
-				</dict>
-				<key>6</key>
-				<dict>
-					<key>name</key>
-					<string>keyword.operator.bigine</string>
-				</dict>
-				<key>7</key>
-				<dict>
-					<key>name</key>
-					<string>variable.other.bigine</string>
-				</dict>
-				<key>8</key>
-				<dict>
-					<key>name</key>
-					<string>invalid.illegal.bigine</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>^(?!\1\t)</string>
-			<key>name</key>
-			<string>meta.mxximum.bigine</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>#action</string>
+					<key>begin</key>
+					<string>^(\t+)(?:(且|或|那么|否则|循环)|(如果)(?:（([^，\s](?:|[^，]*[^，\s]))）|(（.*）)))：?$</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.bigine</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>constant.character.bigine</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>^(?!\1\t)</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#action</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>^(\t+)(如果数据)(?:（([^，\s]+)）|(（.*）))：?$</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.bigine</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>^(?!\1\t)</string>
+					<key>name</key>
+					<string>meta.action.state.bigine</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#action</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -145,7 +166,7 @@
 			<key>end</key>
 			<string>^(?!\1\t)</string>
 			<key>name</key>
-			<string>meta.choose.bigine</string>
+			<string>meta.action.state.bigine</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -174,8 +195,6 @@
 					</dict>
 					<key>match</key>
 					<string>^\t+(?:(\S+?)|(.*))(?:：(\S(?:|.*\S))|(：.*))$</string>
-					<key>name</key>
-					<string>meta.choose.option.bigine</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -188,8 +207,6 @@
 					</dict>
 					<key>match</key>
 					<string>^\t+(\S(?:|.*\S))$</string>
-					<key>name</key>
-					<string>meta.choose.option.bigine</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -236,7 +253,9 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(设置人物|人物出场)(?:|（([左中右])）|(（.*）))(?:：([^，\s](?:|[^，]*[^，\s]))(?:|，([^，\s]+))|(：.*))$</string>
+					<string>^\t+(设置人物|人物出场)(?:|（([左中右])）|(（.*）))(?:：([^，\s](?:|[^，]*[^，\s]))(?:|，([^，\s]+))|(：.*))\n</string>
+					<key>name</key>
+					<string>meta.action.extra.bigine</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -312,7 +331,9 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(改变神态)(?:（([^，\s]+)）|(（.*）))(?:：([^，\s]+)|(：.*))$</string>
+					<string>^\t+(改变神态)(?:（([^，\s]+)）|(（.*）))(?:：([^，\s]+)|(：.*))\n</string>
+					<key>name</key>
+					<string>meta.action.extra.bigine</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -416,7 +437,9 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(当数据)(?:（([^，\s]+?)，([^，\s](?:|[^，]*[^，\s]))(?:|，(不?[等大小]于))）|(（.*）))：?$</string>
+					<string>^\t+(当数据)(?:（([^，\s]+?)，([^，\s](?:|[^，]*[^，\s]))(?:|，(不?[等大小]于))）|(（.*）))：?\n</string>
+					<key>name</key>
+					<string>meta.action.state.bigine</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -438,7 +461,9 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(对比数据)(?:（([^，\s]+)）|(（.*）))：?$</string>
+					<string>^\t+(对比数据)(?:（([^，\s]+)）|(（.*）))：?\n</string>
+					<key>name</key>
+					<string>meta.action.state.bigine</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -470,7 +495,9 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+((?:设置|增加)数据)(?:（([^，\s]+)）|(（.*）))(?:：(\S(?:|.*\S))|(：.*))$</string>
+					<string>^\t+((?:设置|增加)数据)(?:（([^，\s]+)）|(（.*）))(?:：(\S(?:|.*\S))|(：.*))\n</string>
+					<key>name</key>
+					<string>meta.action.state.bigine</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -527,8 +554,6 @@
 			</dict>
 			<key>end</key>
 			<string>$</string>
-			<key>name</key>
-			<string>meta.words.bigine</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -557,8 +582,6 @@
 					</dict>
 					<key>match</key>
 					<string>(?&lt;=对白)(?:（([^，\s]+)，([^，\s]+)(?:|，(\S(?:|.*?\S)))）|(（.*）))(?=：)</string>
-					<key>name</key>
-					<string>meta.words.params.bigine</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -567,19 +590,9 @@
 					<string>string.quoted.double.bigine</string>
 					<key>end</key>
 					<string>$</string>
-					<key>name</key>
-					<string>meta.words.content.bigine</string>
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>meta.words.content.hilite.bigine</string>
-								</dict>
-							</dict>
 							<key>match</key>
 							<string>【(.+?)】</string>
 							<key>name</key>
@@ -640,7 +653,7 @@
 			<key>end</key>
 			<string>^(?!\1\t)</string>
 			<key>name</key>
-			<string>meta.mxximum.bigine</string>
+			<string>meta.action.state.bigine</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -653,9 +666,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(\S+)$</string>
-					<key>name</key>
-					<string>meta.mxximum.option.bigine</string>
+					<string>^\t+(\S+)\n</string>
 				</dict>
 				<dict>
 					<key>include</key>

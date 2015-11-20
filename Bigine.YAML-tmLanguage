@@ -190,21 +190,19 @@ repository:
   choose:
     begin: ^(\t+)(选择)(?:|（([^，\s]+)）|(（.*）))：?$
     end: ^(?!\1\t)
-    name: meta.choose.bigine
+    name: meta.action.state.bigine
     beginCaptures:
       '2': {name: keyword.control.bigine}
       '3': {name: variable.other.bigine}
       '4': {name: invalid.illegal.bigine}
     patterns:
     - match: ^\t+(?:(\S+?)|(.*))(?:：(\S(?:|.*\S))|(：.*))$
-      name: meta.choose.option.bigine
       captures:
         '1': {name: constant.character.bigine}
         '2': {name: invalid.illegal.bigine}
         '3': {name: string.quoted.double.bigine}
         '4': {name: invalid.illegal.bigine}
     - match: ^\t+(\S(?:|.*\S))$
-      name: meta.choose.option.bigine
       captures:
         '1': {name: constant.character.bigine}
     - include: '#illegal'
@@ -212,48 +210,56 @@ repository:
   mxximum:
     begin: ^(\t+)(最[大小]数据)(?:|（([^，\s]+)）|(（.*）))：?$
     end: ^(?!\1\t)
-    name: meta.mxximum.bigine
+    name: meta.action.state.bigine
     beginCaptures:
       '2': {name: keyword.operator.bigine}
       '3': {name: variable.other.bigine}
       '4': {name: invalid.illegal.bigine}
     patterns:
-    - match: ^\t+(\S+)$
-      name: meta.mxximum.option.bigine
+    - match: ^\t+(\S+)\n
       captures:
         '1': {name: variable.other.bigine}
     - include: '#illegal'
 
   block:
-    begin: ^(\t+)(?:(且|或|那么|否则|循环)|(如果)(?:（([^，\s](?:|[^，]*[^，\s]))）|(（.*）))|(如果数据)(?:（([^，\s]+)）|(（.*）)))：?$
-    end: ^(?!\1\t)
-    name: meta.mxximum.bigine
-    beginCaptures:
-      '2': {name: keyword.operator.bigine}
-      '3': {name: keyword.operator.bigine}
-      '4': {name: constant.character.bigine}
-      '5': {name: invalid.illegal.bigine}
-      '6': {name: keyword.operator.bigine}
-      '7': {name: variable.other.bigine}
-      '8': {name: invalid.illegal.bigine}
     patterns:
-    - include: '#action'
+    - begin: ^(\t+)(?:(且|或|那么|否则|循环)|(如果)(?:（([^，\s](?:|[^，]*[^，\s]))）|(（.*）)))：?$
+      end: ^(?!\1\t)
+      beginCaptures:
+        '2': {name: keyword.operator.bigine}
+        '3': {name: keyword.operator.bigine}
+        '4': {name: constant.character.bigine}
+        '5': {name: invalid.illegal.bigine}
+      patterns:
+      - include: '#action'
+    - begin: ^(\t+)(如果数据)(?:（([^，\s]+)）|(（.*）))：?$
+      end: ^(?!\1\t)
+      name: meta.action.state.bigine
+      beginCaptures:
+        '2': {name: keyword.operator.bigine}
+        '3': {name: variable.other.bigine}
+        '4': {name: invalid.illegal.bigine}
+      patterns:
+      - include: '#action'
 
   for-state:
     patterns:
-    - match: ^\t+(当数据)(?:（([^，\s]+?)，([^，\s](?:|[^，]*[^，\s]))(?:|，(不?[等大小]于))）|(（.*）))：?$
+    - match: ^\t+(当数据)(?:（([^，\s]+?)，([^，\s](?:|[^，]*[^，\s]))(?:|，(不?[等大小]于))）|(（.*）))：?\n
+      name: meta.action.state.bigine
       captures:
         '1': {name: keyword.operator.bigine}
         '2': {name: variable.other.bigine}
         '3': {name: constant.character.bigine}
         '4': {name: constant.language.bigine}
         '5': {name: invalid.illegal.bigine}
-    - match: ^\t+(对比数据)(?:（([^，\s]+)）|(（.*）))：?$
+    - match: ^\t+(对比数据)(?:（([^，\s]+)）|(（.*）))：?\n
+      name: meta.action.state.bigine
       captures:
         '1': {name: keyword.operator.bigine}
         '2': {name: variable.other.bigine}
         '3': {name: invalid.illegal.bigine}
-    - match: ^\t+((?:设置|增加)数据)(?:（([^，\s]+)）|(（.*）))(?:：(\S(?:|.*\S))|(：.*))$
+    - match: ^\t+((?:设置|增加)数据)(?:（([^，\s]+)）|(（.*）))(?:：(\S(?:|.*\S))|(：.*))\n
+      name: meta.action.state.bigine
       captures:
         '1': {name: keyword.operator.bigine}
         '2': {name: variable.other.bigine}
@@ -271,7 +277,8 @@ repository:
 
   for-director:
     patterns:
-    - match: ^\t+(设置人物|人物出场)(?:|（([左中右])）|(（.*）))(?:：([^，\s](?:|[^，]*[^，\s]))(?:|，([^，\s]+))|(：.*))$
+    - match: ^\t+(设置人物|人物出场)(?:|（([左中右])）|(（.*）))(?:：([^，\s](?:|[^，]*[^，\s]))(?:|，([^，\s]+))|(：.*))\n
+      name: meta.action.extra.bigine
       captures:
         '1': {name: keyword.control.bigine}
         '2': {name: constant.language.bigine}
@@ -289,7 +296,8 @@ repository:
         '1': {name: keyword.control.bigine}
         '2': {name: entity.other.attribute-name.bigine}
         '3': {name: invalid.illegal.bigine}
-    - match: ^\t+(改变神态)(?:（([^，\s]+)）|(（.*）))(?:：([^，\s]+)|(：.*))$
+    - match: ^\t+(改变神态)(?:（([^，\s]+)）|(（.*）))(?:：([^，\s]+)|(：.*))\n
+      name: meta.action.extra.bigine
       captures:
         '1': {name: keyword.control.bigine}
         '2': {name: entity.other.inherited-class.bigine}
@@ -315,13 +323,11 @@ repository:
   for-words:
     begin: ^\t+(?:([旁独]白|提示)(?=：)|(对白)(?=（))
     end: $
-    name: meta.words.bigine
     beginCaptures:
       '1': {name: keyword.control.bigine}
       '2': {name: keyword.control.bigine}
     patterns:
     - match: (?<=对白)(?:（([^，\s]+)，([^，\s]+)(?:|，(\S(?:|.*?\S)))）|(（.*）))(?=：)
-      name: meta.words.params.bigine
       captures:
         '1': {name: entity.other.inherited-class.bigine}
         '2': {name: entity.other.inherited-class.bigine}
@@ -329,13 +335,10 @@ repository:
         '4': {name: invalid.illegal.bigine}
     - begin: (?<=：)
       end: $
-      name: meta.words.content.bigine
       contentName: string.quoted.double.bigine
       patterns:
       - match: 【(.+?)】
         name: string.regexp.bigine
-        captures:
-          '1': {name: meta.words.content.hilite.bigine}
       - match: 〈(\S+?)〉|＜(\S+?)＞
         name: string.interpolated.bigine
         captures:

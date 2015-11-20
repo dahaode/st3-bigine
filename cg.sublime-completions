@@ -1,5 +1,5 @@
 {
-    "scope": "meta.cg.bigine",
+    "scope": "meta.bigine.cg",
     "completions": [
         { "trigger": "画面", "contents": "画面：" }
     ]

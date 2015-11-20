@@ -6,6 +6,6 @@
 否则：
 ]]></content>
 	<tabTrigger>对比</tabTrigger>
-	<scope>text.bigine meta.scene.content.bigine</scope>
+	<scope>text.bigine meta.bigine.scene.content</scope>
 	<description>对比数据…如果…</description>
 </snippet>

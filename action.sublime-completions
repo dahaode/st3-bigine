@@ -1,5 +1,5 @@
 {
-    "scope": "meta.scene.conditions.bigine, meta.scene.content.bigine",
+    "scope": "meta.bigine.scene - meta.bigine.scene.type",
     "completions": [
         { "trigger": "选择", "contents": "选择${1:（$2）}：" },
         { "trigger": "最小数据", "contents": "最小数据${1:（$2）}："},

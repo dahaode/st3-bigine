@@ -6,6 +6,6 @@
 否则：
 ]]></content>
 	<tabTrigger>当</tabTrigger>
-	<scope>text.bigine meta.scene.content.bigine</scope>
+	<scope>text.bigine meta.bigine.scene.content</scope>
 	<description>当数据…那么…</description>
 </snippet>

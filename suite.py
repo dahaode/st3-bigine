@@ -21,19 +21,22 @@ class SuiteHandler(sublime_plugin.EventListener):
                 'Origin': 'http://dahao.de'
             })
             resp = conn.getresponse()
-            if 200 == resp.status:
-                self.__suites = json.loads(resp.read().decode('utf-8'))
+            if 200 != resp.status:
+                conn.close()
+                raise ValueError('')
+            self.__suites = json.loads(resp.read().decode('utf-8'))
             conn.close()
+            view.erase_status(key)
         except:
+            view.set_status(key, '读取素材包列表…失败')
             self.__suites = {}
-        view.erase_status(key)
         self.__loading = False
         return 0 < len(self.__suites)
 
     def __load(self, view):
         if self.__loading:
             return False
-        regions = view.find_by_selector('meta.suite.bigine constant.language')
+        regions = view.find_by_selector('meta.bigine.suite constant.language')
         id = view.substr(regions[0])
         if 'id' in self.__entities and self.__entities['id'] == id:
             return True
@@ -46,20 +49,24 @@ class SuiteHandler(sublime_plugin.EventListener):
                 'Origin': 'http://dahao.de'
             })
             resp = conn.getresponse()
-            if 200 == resp.status:
-                self.__entities = json.loads(resp.read().decode('utf-8'))
+            if 200 != resp.status:
+                conn.close()
+                raise ValueError('')
+            self.__entities = json.loads(resp.read().decode('utf-8'))
+            self.__entities['id'] = id
             conn.close()
+            view.erase_status(key)
         except:
+            view.set_status(key, '读取素材包内实体列表…失败')
             self.__entities = {}
         print(self.__entities)
-        view.erase_status(key)
         self.__loading = False
         return 0 < len(self.__entities)
 
     def __validate_suite(self, view):
         if not self.__list(view):
             return
-        regions = view.find_by_selector('meta.suite.bigine constant.language')
+        regions = view.find_by_selector('meta.bigine.suite constant.language')
         key = 'bigine.error.suite'
         if 1 == len(regions) and (not len(self.__suites) or view.substr(regions[0]) in self.__suites):
             view.erase_regions(key)
@@ -82,7 +89,6 @@ class SuiteHandler(sublime_plugin.EventListener):
         options2 = []
         command = prefix[0:4]
         prefix2 = prefix[4:]
-        print(self.__suites)
         for id in self.__suites:
             pos = id.find(prefix2)
             if -1 == pos:
@@ -99,5 +105,5 @@ class SuiteHandler(sublime_plugin.EventListener):
             return []
         def __inhibit(list):
             return (list, sublime.INHIBIT_WORD_COMPLETIONS)
-        if view.score_selector(locations[0], 'meta.suite.bigine'):
+        if view.score_selector(locations[0], 'meta.bigine.suite'):
             return __inhibit(self.__complete_suites(view, prefix))

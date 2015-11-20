@@ -10,7 +10,7 @@ class ThemeHandler(sublime_plugin.EventListener):
     def __validate(self, view):
         if not len(view.find_by_selector('text.bigine')):
             return
-        regions = view.find_by_selector('meta.theme.bigine constant.language')
+        regions = view.find_by_selector('meta.bigine.theme constant.language')
         key = 'bigine.error.theme'
         if 1 == len(regions) and view.substr(regions[0]) in self.__themes:
             view.erase_regions(key)
@@ -29,7 +29,7 @@ class ThemeHandler(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
         if not len(view.find_by_selector('text.bigine')):
             return []
-        if 1 < len(locations) or not view.score_selector(locations[0], 'meta.theme.bigine'):
+        if 1 < len(locations) or not view.score_selector(locations[0], 'meta.bigine.theme'):
             return ([], sublime.INHIBIT_WORD_COMPLETIONS)
         options = []
         options2 = []

@@ -1,4 +1,8 @@
 {
+    "auto_complete_triggers": [
+        { "selector": "meta.scene.bigine", "characters": "（" },
+        { "selector": "meta.suite.bigine, meta.theme.bigine", "characters": "：" }
+    ],
     "default_line_ending": "unix",
     "ensure_newline_at_eof_on_save": true,
     "tab_size": 4,

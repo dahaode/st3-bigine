@@ -1,4 +1,4 @@
-import sublime, sublime_plugin, http.client, json
+import sublime, sublime_plugin, http.client, json, re
 
 class SuiteHandler(sublime_plugin.EventListener):
     __suites = {}
@@ -113,13 +113,39 @@ class SuiteHandler(sublime_plugin.EventListener):
                 options.append(option)
         return options + options2
 
+    def __complete_pose(self, prefix, symbol):
+        if '：' == symbol:
+            match = re.match('^(改变神态（(\S+)）：)(.*)', prefix)
+        elif '，' == symbol:
+            match = re.match('^((?:设置人物|人物出场)(?:|（[左中右]）)：(\S+?)，)(.*)', prefix)
+        else:
+            match = None
+        if not match:
+            return []
+        command = match.group(1)
+        prefix2 = match.group(3)
+        name = match.group(2)
+        for item in self.__entities['chars']:
+            if name == item['id']:
+                poses = item['meta']
+        options = []
+        options2 = []
+        for name in poses:
+            pos = name.find(prefix2)
+            if -1 == pos:
+                continue
+            option = (prefix + "\t" + name, command + name)
+            if pos:
+                options2.append(option)
+            else:
+                options.append(option)
+        return options + options2
+
     def __complete_entity(self, view, prefix, location):
         patterns = []
         for scope in view.scope_name(location).split():
             if 'meta.bigine.ref.' == scope[0:16]:
                 pattern = scope[16:].split('.')
-                if 'pose' == pattern[1]:
-                    continue
                 pattern[1] += 's'
                 if 'colon' == pattern[0]:
                     pattern[0] = '：'
@@ -136,7 +162,8 @@ class SuiteHandler(sublime_plugin.EventListener):
             if test > pos:
                 pos = test
                 symbol, type = pattern
-        print(patterns, pos, type, symbol)
+        if 'poses' == type:
+            return self.__complete_pose(prefix, symbol)
         if type not in self.__entities or -1 == pos:
             return []
         options = []
@@ -146,7 +173,6 @@ class SuiteHandler(sublime_plugin.EventListener):
         prefix2 = prefix[pos:]
         for entity in self.__entities[type]:
             pos = entity['id'].find(prefix2)
-            print(entity['id'], pos)
             if -1 == pos:
                 continue
             option = (prefix + "\t" + entity['id'], command + entity['id'])

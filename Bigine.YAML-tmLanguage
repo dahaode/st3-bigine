@@ -393,7 +393,7 @@ repository:
     patterns:
     - comment: scene type
       match: ^\t(类型)：(?:((?:开始|完结|失败)时|(?:进入|离开)（([^，\s]+?)）(?:前|后))|(.*))$\n?
-      name: meta.bigine.scene.type meta.bigine.ref.room meta.bigine.after.bracket
+      name: meta.bigine.scene.type meta.bigine.ref.bracket.room
       captures:
         '1': {name: storage.modifier.bigine}
         '2': {name: constant.language.bigine}

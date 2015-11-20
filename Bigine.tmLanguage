@@ -833,7 +833,7 @@
 					<key>match</key>
 					<string>^\t(类型)：(?:((?:开始|完结|失败)时|(?:进入|离开)（([^，\s]+?)）(?:前|后))|(.*))$\n?</string>
 					<key>name</key>
-					<string>meta.bigine.scene.type meta.bigine.ref.room meta.bigine.after.bracket</string>
+					<string>meta.bigine.scene.type meta.bigine.ref.bracket.room</string>
 				</dict>
 				<dict>
 					<key>begin</key>

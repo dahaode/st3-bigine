@@ -845,7 +845,7 @@
 					<key>comment</key>
 					<string>theme</string>
 					<key>match</key>
-					<string>^(主题)(?:：(dahao|100|fl9t)|(：.*))\n</string>
+					<string>^(主题)(?:：(\S+)|(：.*))\n</string>
 					<key>name</key>
 					<string>meta.theme.bigine</string>
 				</dict>

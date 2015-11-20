@@ -2,6 +2,8 @@ import sublime, sublime_plugin, re
 
 class StateHandler(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
+        if not len(view.find_by_selector('text.bigine')):
+            return []
         if 1 < len(locations) or not view.score_selector(locations[0], 'meta.action.state'):
             return ([], sublime.INHIBIT_WORD_COMPLETIONS)
         pos = prefix.find('（')

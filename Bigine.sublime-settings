@@ -1,7 +1,8 @@
 {
     "auto_complete_triggers": [
-        { "selector": "meta.bigine.scene", "characters": "（" },
-        { "selector": "meta.bigine.suite, meta.bigine.theme", "characters": "：" }
+        { "selector": "text.bigine meta.bigine.ref.bracket", "characters": "（" },
+        { "selector": "text.bigine meta.bigine.ref.comma", "characters": "，" },
+        { "selector": "text.bigine meta.bigine.ref.colon", "characters": "：" }
     ],
     "default_line_ending": "unix",
     "ensure_newline_at_eof_on_save": true,

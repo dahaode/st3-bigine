@@ -130,7 +130,7 @@
 					<key>end</key>
 					<string>^(?!\1\t)</string>
 					<key>name</key>
-					<string>meta.bigine.ref.state</string>
+					<string>meta.bigine.ref.bracket.state</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -166,7 +166,7 @@
 			<key>end</key>
 			<string>^(?!\1\t)</string>
 			<key>name</key>
-			<string>meta.bigine.ref.state</string>
+			<string>meta.bigine.literal meta.bigine.ref.bracket.state</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -255,7 +255,7 @@
 					<key>match</key>
 					<string>^\t+(设置人物|人物出场)(?:|（([左中右])）|(（.*）))(?:：([^，\s](?:|[^，]*[^，\s]))(?:|，([^，\s]+))|(：.*))$\n?</string>
 					<key>name</key>
-					<string>meta.bigine.action.extra</string>
+					<string>meta.bigine.ref.colon.char meta.bigine.ref.comma.pose</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -277,7 +277,105 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(人物离场|播放音[乐效]|展示特写|(?:设置|进入)房间)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<string>^\t+(人物离场)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<key>name</key>
+					<string>meta.bigine.ref.bracket.char</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.bigine</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.inherited-class.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\t+(播放音乐)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<key>name</key>
+					<string>meta.bigine.ref.bracket.bgm</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.bigine</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.inherited-class.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\t+(播放音效)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<key>name</key>
+					<string>meta.bigine.ref.bracket.se</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.bigine</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.inherited-class.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\t+(展示特写)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<key>name</key>
+					<string>meta.bigine.ref.bracket.cg</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.bigine</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.inherited-class.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\t+((?:设置|进入)房间)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<key>name</key>
+					<string>meta.bigine.ref.bracket.room</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -333,7 +431,7 @@
 					<key>match</key>
 					<string>^\t+(改变神态)(?:（([^，\s]+)）|(（.*）))(?:：([^，\s]+)|(：.*))$\n?</string>
 					<key>name</key>
-					<string>meta.bigine.action.extra</string>
+					<string>meta.bigine.ref.bracket.char meta.bigine.ref.colon.pose</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -400,6 +498,8 @@
 					</dict>
 					<key>match</key>
 					<string>^\t+(人物移动)(?:（([^，\s]+)）|(（.*）))(?:：([左中右])|(：.*))$\n?</string>
+					<key>name</key>
+					<string>meta.bigine.ref.bracket.char</string>
 				</dict>
 			</array>
 		</dict>
@@ -439,7 +539,7 @@
 					<key>match</key>
 					<string>^\t+(当数据)(?:（([^，\s]+?)，([^，\s](?:|[^，]*[^，\s]))(?:|，(不?[等大小]于))）|(（.*）))：?$\n?</string>
 					<key>name</key>
-					<string>meta.bigine.ref.state</string>
+					<string>meta.bigine.ref.bracket.state</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -463,7 +563,7 @@
 					<key>match</key>
 					<string>^\t+(对比数据)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
 					<key>name</key>
-					<string>meta.bigine.ref.state</string>
+					<string>meta.bigine.ref.bracket.state</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -497,7 +597,7 @@
 					<key>match</key>
 					<string>^\t+((?:设置|增加)数据)(?:（([^，\s]+)）|(（.*）))(?:：(\S(?:|.*\S))|(：.*))$\n?</string>
 					<key>name</key>
-					<string>meta.bigine.ref.state</string>
+					<string>meta.bigine.ref.bracket.state</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -582,6 +682,8 @@
 					</dict>
 					<key>match</key>
 					<string>(?&lt;=对白)(?:（([^，\s]+)，([^，\s]+)(?:|，(\S(?:|.*?\S)))）|(（.*）))(?=：)</string>
+					<key>name</key>
+					<string>meta.bigine.ref.bracket.char meta.bigine.ref.comma.char</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -653,7 +755,7 @@
 			<key>end</key>
 			<string>^(?!\1\t)</string>
 			<key>name</key>
-			<string>meta.bigine.ref.state</string>
+			<string>meta.bigine.literal meta.bigine.ref.bracket.state</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -731,7 +833,7 @@
 					<key>match</key>
 					<string>^\t(类型)：(?:((?:开始|完结|失败)时|(?:进入|离开)（([^，\s]+?)）(?:前|后))|(.*))$\n?</string>
 					<key>name</key>
-					<string>meta.bigine.scene.type</string>
+					<string>meta.bigine.scene.type meta.bigine.ref.room meta.bigine.after.bracket</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -821,7 +923,7 @@
 					<key>match</key>
 					<string>^(素材包)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))$\n?</string>
 					<key>name</key>
-					<string>meta.bigine.suite</string>
+					<string>meta.bigine.suite meta.bigine.after.colon</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -847,7 +949,7 @@
 					<key>match</key>
 					<string>^(主题)(?:：(\S+)|(：.*))$\n?</string>
 					<key>name</key>
-					<string>meta.bigine.theme</string>
+					<string>meta.bigine.theme meta.bigine.after.colon</string>
 				</dict>
 				<dict>
 					<key>captures</key>

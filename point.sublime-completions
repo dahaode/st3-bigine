@@ -1,5 +1,5 @@
 {
-    "scope": "meta.bigine.map.point",
+    "scope": "text.bigine meta.bigine.map.point",
     "completions": [
         { "trigger": "高亮", "contents": "高亮：" },
         { "trigger": "对应房间", "contents": "对应房间：" },

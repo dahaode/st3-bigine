@@ -808,7 +808,7 @@
 					<key>comment</key>
 					<string>resource suite</string>
 					<key>match</key>
-					<string>^(素材包)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))$</string>
+					<string>^(素材包)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))\n</string>
 					<key>name</key>
 					<string>meta.suite.bigine</string>
 				</dict>
@@ -834,7 +834,7 @@
 					<key>comment</key>
 					<string>theme</string>
 					<key>match</key>
-					<string>^(主题)(?:：(dahao|100|fl9t)|(：.*))$</string>
+					<string>^(主题)(?:：(dahao|100|fl9t)|(：.*))\n</string>
 					<key>name</key>
 					<string>meta.theme.bigine</string>
 				</dict>
@@ -855,7 +855,7 @@
 					<key>comment</key>
 					<string>autoplay</string>
 					<key>match</key>
-					<string>^(自动播放)(?:|：(.*))$</string>
+					<string>^(自动播放)(?:|：(.*))\n</string>
 					<key>name</key>
 					<string>meta.autoplay.bigine</string>
 				</dict>
@@ -881,7 +881,7 @@
 					<key>comment</key>
 					<string>player</string>
 					<key>match</key>
-					<string>^(主角)(?:：(\S+)|(：.*))$</string>
+					<string>^(主角)(?:：(\S+)|(：.*))\n</string>
 					<key>name</key>
 					<string>meta.player.bigine</string>
 				</dict>
@@ -944,7 +944,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>^\t(头像)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))$</string>
+							<string>^\t(头像)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))\n</string>
 							<key>name</key>
 							<string>meta.char.avatar.bigine</string>
 						</dict>
@@ -1036,7 +1036,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>^\t(使用地图)(?:：(\S+)|(：.*))$</string>
+							<string>^\t(使用地图)(?:：(\S+)|(：.*))\n</string>
 							<key>name</key>
 							<string>meta.room.map.bigine</string>
 						</dict>
@@ -1128,7 +1128,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>^\t(底图)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))$</string>
+							<string>^\t(底图)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))\n</string>
 							<key>name</key>
 							<string>meta.map.back.bigine</string>
 						</dict>
@@ -1189,7 +1189,7 @@
 										</dict>
 									</dict>
 									<key>match</key>
-									<string>^\t\t(高亮)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))$</string>
+									<string>^\t\t(高亮)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))\n</string>
 									<key>name</key>
 									<string>meta.map.point.cover.bigine</string>
 								</dict>
@@ -1213,7 +1213,7 @@
 										</dict>
 									</dict>
 									<key>match</key>
-									<string>^\t\t(对应房间)(?:：(\S+)|(：.*))$</string>
+									<string>^\t\t(对应房间)(?:：(\S+)|(：.*))\n</string>
 									<key>name</key>
 									<string>meta.map.point.link.bigine</string>
 								</dict>
@@ -1257,7 +1257,7 @@
 										</dict>
 									</dict>
 									<key>match</key>
-									<string>^\t\t(区域)(?:：(-?\d+)，(-?\d+)，(-?\d+)，(-?\d+)(?:|，(\d+))|(：.*))$</string>
+									<string>^\t\t(区域)(?:：(-?\d+)，(-?\d+)，(-?\d+)，(-?\d+)(?:|，(\d+))|(：.*))\n</string>
 									<key>name</key>
 									<string>meta.map.point.region.bigine</string>
 								</dict>
@@ -1322,7 +1322,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>^\t(音源)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))$</string>
+							<string>^\t(音源)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))\n</string>
 							<key>name</key>
 							<string>meta.sound.source.bigine</string>
 						</dict>
@@ -1381,7 +1381,7 @@
 								</dict>
 							</dict>
 							<key>match</key>
-							<string>^\t(画面)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))$</string>
+							<string>^\t(画面)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))\n</string>
 							<key>name</key>
 							<string>meta.cg.source.bigine</string>
 						</dict>

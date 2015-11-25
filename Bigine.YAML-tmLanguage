@@ -334,7 +334,7 @@ repository:
         '1': {name: keyword.control.bigine}
         '2': {name: constant.language.bigine}
         '3': {name: invalid.illegal.bigine}
-    - match: ^\t+(关闭特写|移动中止)：?$\n?
+    - match: ^\t+(关闭特写|移动中止|停止音乐)：?$\n?
       captures:
         '1': {name: keyword.control.bigine}
     - match: ^\t+(人物移动)(?:（([^，\s]+)）|(（.*）))(?:：([左中右])|(：.*))$\n?

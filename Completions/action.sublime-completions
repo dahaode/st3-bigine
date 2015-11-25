@@ -32,6 +32,7 @@
         { "trigger": "评分", "contents": "评分（${1:及格}）" },
         "关闭特写",
         "移动中止",
+        "停止音乐",
         { "trigger": "人物移动", "contents": "人物移动（$1）：${0:中}" },
         { "trigger": "旁白", "contents": "旁白：" },
         { "trigger": "独白", "contents": "独白：" },

@@ -1,20 +1,21 @@
-import sublime, sublime_plugin, sublime_lib, os, tempfile, webbrowser
+import sublime, sublime_plugin, os, tempfile, webbrowser
 
-class WorkCommand(sublime_lib.WindowAndTextCommand):
-    def run(self, edit=None):
-        if len(self.view.find_by_selector('invalid.illegal.bigine') or self.view.get_regions('bigine.error.theme') or self.view.get_regions('bigine.error.suite')):
+class WorkCommand(sublime_plugin.WindowCommand):
+    def run(self):
+        view = self.window.active_view()
+        if len(view.find_by_selector('invalid.illegal.bigine') or view.get_regions('bigine.error.theme') or view.get_regions('bigine.error.suite')):
             sublime.error_message('源代码中存在错误，请处理 :-(')
             return
-        if self.view.is_dirty():
-            self.view.run_command('save')
-            if self.view.is_dirty():
+        if view.is_dirty():
+            view.run_command('save')
+            if view.is_dirty():
                 sublime.error_message('自动保存失败 :-(')
                 return
-        tpl_file = os.path.dirname(sublime.packages_path()) + '/' + os.path.dirname(self.view.settings().get('syntax')) + '/work.html'
+        tpl_file = os.path.dirname(sublime.packages_path()) + '/' + os.path.dirname(view.settings().get('syntax')) + '/work.html'
         fh = open(tpl_file)
         tpl = fh.read(os.path.getsize(tpl_file))
         fh.close()
-        src_file = self.view.file_name()
+        src_file = view.file_name()
         fh = open(src_file, encoding='utf-8')
         src = fh.read(os.path.getsize(src_file))
         fh.close()

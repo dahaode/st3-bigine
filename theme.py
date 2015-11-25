@@ -13,8 +13,10 @@ class ThemeHandler(sublime_plugin.EventListener):
         regions = view.find_by_selector('meta.bigine.theme constant.language')
         key = 'bigine.error.theme'
         if 1 == len(regions) and view.substr(regions[0]) in self.__themes:
+            sublime.status_message('')
             view.erase_regions(key)
             return
+        sublime.status_message('无效的主题编号 :-(')
         view.add_regions(key, regions, 'invalid.illegal.bigine')
 
     def on_new_async(self, view):

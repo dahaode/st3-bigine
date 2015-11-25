@@ -14,7 +14,7 @@ class SuiteHandler(sublime_plugin.EventListener):
             return True
         key = 'bigine.status'
         self.__loading = True
-        view.set_status(key, '读取素材包列表…')
+        sublime.status_message('读取素材包列表…')
         try:
             conn = http.client.HTTPConnection('api.dahao.de', timeout=3)
             conn.request('POST', '/resource', headers={
@@ -26,9 +26,9 @@ class SuiteHandler(sublime_plugin.EventListener):
                 raise ValueError('')
             self.__suites = json.loads(resp.read().decode('utf-8'))
             conn.close()
-            view.erase_status(key)
+            sublime.status_message('')
         except:
-            view.set_status(key, '读取素材包列表…失败')
+            sublime.status_message('读取素材包列表…失败 :-(')
             self.__suites = {}
         self.__loading = False
         return 0 < len(self.__suites)
@@ -42,7 +42,7 @@ class SuiteHandler(sublime_plugin.EventListener):
             return True
         key = 'bigine.status'
         self.__loading = True
-        view.set_status(key, '读取素材包内实体列表…')
+        sublime.status_message('读取素材包内实体列表…')
         try:
             conn = http.client.HTTPConnection('api.dahao.de', timeout=10)
             conn.request('POST', '/resource/' + id, headers={
@@ -69,9 +69,9 @@ class SuiteHandler(sublime_plugin.EventListener):
                                 obj['meta'].append(item)
                         self.__entities[type].append(obj)
             conn.close()
-            view.erase_status(key)
+            sublime.status_message('')
         except:
-            view.set_status(key, '读取素材包内实体列表…失败')
+            sublime.status_message('读取素材包内实体列表…失败 :-(')
             self.__entities = {}
         self.__loading = False
         return 0 < len(self.__entities)
@@ -82,9 +82,11 @@ class SuiteHandler(sublime_plugin.EventListener):
         regions = view.find_by_selector('meta.bigine.suite constant.language')
         key = 'bigine.error.suite'
         if 1 == len(regions) and (not len(self.__suites) or view.substr(regions[0]) in self.__suites):
+            sublime.status_message('')
             view.erase_regions(key)
             self.__load(view)
             return
+        sublime.status_message('无效的素材包编号 :-(')
         view.add_regions(key, regions, 'invalid.illegal.bigine')
         self.__entities = {}
 

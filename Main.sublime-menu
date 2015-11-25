@@ -9,7 +9,12 @@
 				"children":
 				[
 					{
-						"caption": "发布",
+						"caption": "创建…",
+						"id": "bigine_new",
+						"command": "bigine_new"
+					},
+					{
+						"caption": "发布…",
 						"id": "bigine_publish",
 						"command": "bigine_publish"
 					},

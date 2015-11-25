@@ -10,9 +10,10 @@ class SuiteHandler(sublime_plugin.EventListener):
     def __list(self, view):
         if not len(view.find_by_selector('text.bigine')) or self.__loading:
             return False
-        if len(self.__suites):
-            return True
         key = 'bigine.status'
+        if len(self.__suites):
+            view.set_status(key, '素材包列表就绪')
+            return True
         self.__loading = True
         sublime.status_message('读取素材包列表…')
         try:
@@ -27,6 +28,7 @@ class SuiteHandler(sublime_plugin.EventListener):
             self.__suites = json.loads(resp.read().decode('utf-8'))
             conn.close()
             sublime.status_message('')
+            view.set_status(key, '素材包列表就绪')
         except:
             sublime.status_message('读取素材包列表…失败 :-(')
             self.__suites = {}
@@ -38,9 +40,10 @@ class SuiteHandler(sublime_plugin.EventListener):
             return False
         regions = view.find_by_selector('meta.bigine.suite constant.language')
         id = view.substr(regions[0])
-        if 'id' in self.__entities and self.__entities['id'] == id:
-            return True
         key = 'bigine.status'
+        if 'id' in self.__entities and self.__entities['id'] == id:
+            view.set_status(key, '素材包实体列表就绪')
+            return True
         self.__loading = True
         sublime.status_message('读取素材包内实体列表…')
         try:
@@ -70,6 +73,7 @@ class SuiteHandler(sublime_plugin.EventListener):
                         self.__entities[type].append(obj)
             conn.close()
             sublime.status_message('')
+            view.set_status(key, '素材包实体列表就绪')
         except:
             sublime.status_message('读取素材包内实体列表…失败 :-(')
             self.__entities = {}

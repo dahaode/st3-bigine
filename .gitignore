@@ -9,5 +9,4 @@
 !Bigine.YAML-tmPreferences
 
 !*.py
-!*.sublime-completions
-!*.sublime-snippet
+!*.sublime-*

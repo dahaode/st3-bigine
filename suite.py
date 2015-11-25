@@ -30,7 +30,7 @@ class SuiteHandler(sublime_plugin.EventListener):
             sublime.status_message('')
             view.set_status(key, '素材包列表就绪')
         except:
-            sublime.status_message('读取素材包列表…失败 :-(')
+            sublime.status_message('读取素材包列表…失败 ₍₍ (̨̡ ‾᷄ᗣ‾᷅ )̧̢ ₎₎')
             self.__suites = {}
         self.__loading = False
         return 0 < len(self.__suites)
@@ -75,7 +75,7 @@ class SuiteHandler(sublime_plugin.EventListener):
             sublime.status_message('')
             view.set_status(key, '素材包实体列表就绪')
         except:
-            sublime.status_message('读取素材包内实体列表…失败 :-(')
+            sublime.status_message('读取素材包内实体列表…失败 ₍₍ (̨̡ ‾᷄ᗣ‾᷅ )̧̢ ₎₎')
             self.__entities = {}
         self.__loading = False
         return 0 < len(self.__entities)
@@ -90,7 +90,7 @@ class SuiteHandler(sublime_plugin.EventListener):
             view.erase_regions(key)
             self.__load(view)
             return
-        sublime.status_message('无效的素材包编号 :-(')
+        sublime.status_message('无效的素材包编号 ₍₍ (̨̡ ‾᷄ᗣ‾᷅ )̧̢ ₎₎')
         view.add_regions(key, regions, 'invalid.illegal.bigine')
         self.__entities = {}
 

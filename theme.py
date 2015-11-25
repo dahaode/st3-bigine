@@ -16,7 +16,7 @@ class ThemeHandler(sublime_plugin.EventListener):
             sublime.status_message('')
             view.erase_regions(key)
             return
-        sublime.status_message('无效的主题编号 :-(')
+        sublime.status_message('无效的主题编号 ₍₍ (̨̡ ‾᷄ᗣ‾᷅ )̧̢ ₎₎')
         view.add_regions(key, regions, 'invalid.illegal.bigine')
 
     def on_new_async(self, view):

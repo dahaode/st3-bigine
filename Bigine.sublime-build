@@ -1,4 +1,4 @@
 {
-    "target": "work",
+    "target": "bigine_publish",
     "selector": "text.bigine"
 }

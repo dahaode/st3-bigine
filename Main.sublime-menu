@@ -1,0 +1,28 @@
+[
+	{
+		"id": "file",
+		"children":
+		[
+			{
+				"caption": "大好网站 · Bigine",
+				"id": "bigine",
+				"children":
+				[
+					{
+						"caption": "发布",
+						"id": "bigine_publish",
+						"command": "bigine_publish"
+					},
+					{
+						"caption": "-"
+					},
+					{
+						"caption": "Build 20151125",
+						"id": "bigine_build_version",
+						"command": "bigine_build_version"
+					}
+				]
+			}
+		]
+	}
+]

@@ -12,7 +12,6 @@ class SuiteHandler(sublime_plugin.EventListener):
             return False
         key = 'bigine.status'
         if len(self.__suites):
-            view.set_status(key, '素材包列表就绪')
             return True
         self.__loading = True
         sublime.status_message('读取素材包列表…')
@@ -42,7 +41,6 @@ class SuiteHandler(sublime_plugin.EventListener):
         id = view.substr(regions[0])
         key = 'bigine.status'
         if 'id' in self.__entities and self.__entities['id'] == id:
-            view.set_status(key, '素材包实体列表就绪')
             return True
         self.__loading = True
         sublime.status_message('读取素材包内实体列表…')
@@ -117,7 +115,10 @@ class SuiteHandler(sublime_plugin.EventListener):
                 options2.append(option)
             else:
                 options.append(option)
-        return options + options2
+        options += options2
+        if not len(options):
+            print('[Bigine] %d 套素材包备选' % len(self.__suites))
+        return options
 
     def __complete_pose(self, prefix, symbol):
         if '：' == symbol:
@@ -145,29 +146,32 @@ class SuiteHandler(sublime_plugin.EventListener):
                 options2.append(option)
             else:
                 options.append(option)
-        return options + options2
+        options += options2
+        if not len(options):
+            print('[Bigine] %d 个姿态备选' % len(poses))
+        return options
 
     def __complete_entity(self, view, prefix, location):
         patterns = []
         for scope in view.scope_name(location).split():
             if 'meta.bigine.ref.' == scope[0:16]:
                 pattern = scope[16:].split('.')
-                pattern[1] += 's'
-                if 'colon' == pattern[0]:
-                    pattern[0] = '：'
-                elif 'comma' == pattern[0]:
-                    pattern[0] = '，'
+                pattern[0] += 's'
+                if 'colon' == pattern[1]:
+                    pattern[1] = '：'
+                elif 'comma' == pattern[1]:
+                    pattern[1] = '，'
                 else:
-                    pattern[0] = '（'
+                    pattern[1] = '（'
                 patterns.append(pattern)
         if not len(patterns):
             return []
         pos = -1
         for pattern in patterns:
-            test = prefix.rfind(pattern[0])
+            test = prefix.rfind(pattern[1])
             if test > pos:
                 pos = test
-                symbol, type = pattern
+                type, symbol = pattern
         if 'poses' == type:
             return self.__complete_pose(prefix, symbol)
         if type not in self.__entities or -1 == pos:
@@ -186,7 +190,10 @@ class SuiteHandler(sublime_plugin.EventListener):
                 options2.append(option)
             else:
                 options.append(option)
-        return options + options2
+        options += options2
+        if not len(options):
+            print('[Bigine] %d 个对象备选' % len(self.__entities[type]))
+        return options
 
     def on_query_completions(self, view, prefix, locations):
         if not len(view.find_by_selector('text.bigine')):

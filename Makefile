@@ -1,10 +1,10 @@
 package = Bigine.sublime-package
-files = Bigine.sublime-build Bigine.sublime-settings Main.sublime-menu bootstrap.html \
-	$(wildcard Bigine.tm*) \
+files = $(wildcard Bigine.tm*) \
+	Bigine.sublime-settings Bigine.sublime-build Main.sublime-menu \
+	$(shell ls Default*.sublime-keymap | sed 's/ /?/g') \
 	$(wildcard Completions/*.sublime-completions) \
 	$(wildcard Snippets/*.sublime-snippet) \
-	$(shell ls Default*.sublime-keymap | sed 's/ /?/g') \
-	$(wildcard *.py)
+	$(wildcard *.py) bootstrap.html CHANGELOG.md
 sp:=
 sp+=
 lb:=(

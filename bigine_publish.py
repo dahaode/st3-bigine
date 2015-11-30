@@ -12,7 +12,7 @@ class BiginePublishCommand(sublime_plugin.WindowCommand):
                 sublime.error_message('自动保存失败 ₍₍ (̨̡ ‾᷄ᗣ‾᷅ )̧̢ ₎₎')
                 return
         try:
-            tpl = sublime.load_resource(os.path.dirname(view.settings().get('syntax')) + '/bootstrap.html')
+            tpl = sublime.load_resource(os.path.dirname(view.settings().get('syntax')) + '/Resources/bootstrap.html')
         except:
             sublime.error_message('此功能仅用于大好网站 Bigine 作品发布…\n₍₍ (̨̡ ‾᷄ᗣ‾᷅ )̧̢ ₎₎')
             return

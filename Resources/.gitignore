@@ -1,0 +1,6 @@
+*.*
+
+!.gitignore
+
+!bootstrap.html
+!CHANGELOG.md

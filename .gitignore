@@ -4,6 +4,7 @@
 
 !Completions/
 !Snippets/
+!Resources/
 
 !Bigine.sublime-build
 !Bigine.sublime-settings
@@ -11,8 +12,6 @@
 !Bigine.tmPreferences
 !Bigine.YAML-tmLanguage
 !Bigine.YAML-tmPreferences
-!bootstrap.html
-!CHANGELOG.md
 !Main.sublime-menu
 !Makefile
 

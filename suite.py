@@ -195,5 +195,5 @@ class SuiteHandler(sublime_plugin.EventListener):
             return (list, sublime.INHIBIT_WORD_COMPLETIONS)
         if view.score_selector(locations[0], 'meta.bigine.suite'):
             return __inhibit(self.__complete_suite(view, prefix))
-        if view.score_selector(locations[0], 'meta.bigine.ref - meta.bigine.ref.bracket.state'):
+        if view.score_selector(locations[0], 'meta.bigine.ref - meta.bigine.ref.state - meta.bigine.ref.choose'):
             return __inhibit(self.__complete_entity(view, prefix, locations[0]))

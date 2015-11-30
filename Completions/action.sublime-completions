@@ -36,6 +36,9 @@
         { "trigger": "人物移动", "contents": "人物移动（$1）：${0:中}" },
         { "trigger": "旁白", "contents": "旁白：" },
         { "trigger": "独白", "contents": "独白：" },
-        { "trigger": "对白", "contents": "对白（$1，${2:$1}${3:，${4:$1}}）：" }
+        { "trigger": "对白", "contents": "对白（$1，${2:$1}${3:，${4:$1}}）：" },
+        { "trigger": "定义选择", "contents": "定义选择：" },
+        { "trigger": "添加选项", "contents": "添加选项（$1，$2）${3:：}" },
+        { "trigger": "去除选项", "contents": "去除选项（$1，$2）" }
     ]
 }

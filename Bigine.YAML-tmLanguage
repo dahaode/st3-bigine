@@ -187,14 +187,7 @@ repository:
       - include: '#illegal'
     - include: '#illegal'
 
-  choose:
-    begin: ^(\t+)(选择)(?:|（([^，\s]+)）|(（.*）))：?$
-    end: ^(?!\1\t)
-    name: meta.bigine.literal meta.bigine.ref.bracket.state
-    beginCaptures:
-      '2': {name: keyword.control.bigine}
-      '3': {name: variable.other.bigine}
-      '4': {name: invalid.illegal.bigine}
+  option:
     patterns:
     - match: ^\t+(?:(\S+?)|(.*))(?:：(\S(?:|.*\S))|(：.*))$
       captures:
@@ -205,20 +198,51 @@ repository:
     - match: ^\t+(\S(?:|.*\S))$
       captures:
         '1': {name: constant.character.bigine}
-    - include: '#illegal'
+
+  choose:
+    patterns:
+    - begin: ^(\t+)(选择)(?:|（([^，\s]+)）|(（.*）))(?:|：(\S+)|(：.*))$
+      end: ^(?!\1\t)
+      name: meta.bigine.literal meta.bigine.ref.state.bracket meta.bigine.after.bracket meta.bigine.ref.choose.colon meta.bigine.after.colon
+      beginCaptures:
+        '2': {name: keyword.control.bigine}
+        '3': {name: variable.other.state.bigine}
+        '4': {name: invalid.illegal.bigine}
+        '5': {name: variable.other.choose.bigine}
+        '6': {name: invalid.illegal.bigine}
+      patterns:
+      - include: '#option'
+      - include: '#illegal'
+    - begin: ^(\t+)(定义选择)(?:：(\S+)|(：.*))$
+      end: ^(?!\1\t)
+      name: meta.bigine.literal meta.bigine.ref.choose.colon meta.bigine.after.colon
+      beginCaptures:
+        '2': {name: keyword.operator.bigine}
+        '3': {name: variable.other.choose.bigine}
+        '4': {name: invalid.illegal.bigine}
+      patterns:
+      - include: '#option'
+      - include: '#illegal'
+    - match: ^\t+((?:添加|去除)选项)(?:（([^，\s]+)，([^，\s]+)）|(（.*）))：?$\n?
+      name: meta.bigine.ref.choose.bracket meta.bigine.after.bracket
+      captures:
+        '1': {name: keyword.operator.bigine}
+        '2': {name: variable.other.choose.bigine}
+        '3': {name: constant.character.bigine}
+        '4': {name: invalid.illegal.bigine}
 
   mxximum:
     begin: ^(\t+)(最[大小]数据)(?:|（([^，\s]+)）|(（.*）))：?$
     end: ^(?!\1\t)
-    name: meta.bigine.literal meta.bigine.ref.bracket.state
+    name: meta.bigine.literal meta.bigine.ref.state.bracket meta.bigine.after.bracket
     beginCaptures:
       '2': {name: keyword.operator.bigine}
-      '3': {name: variable.other.bigine}
+      '3': {name: variable.other.state.bigine}
       '4': {name: invalid.illegal.bigine}
     patterns:
     - match: ^\t+(\S+)$\n?
       captures:
-        '1': {name: variable.other.bigine}
+        '1': {name: variable.other.state.bigine}
     - include: '#illegal'
 
   block:
@@ -234,10 +258,10 @@ repository:
       - include: '#action'
     - begin: ^(\t+)(如果数据)(?:（([^，\s]+)）|(（.*）))：?$
       end: ^(?!\1\t)
-      name: meta.bigine.ref.bracket.state
+      name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
       beginCaptures:
         '2': {name: keyword.operator.bigine}
-        '3': {name: variable.other.bigine}
+        '3': {name: variable.other.state.bigine}
         '4': {name: invalid.illegal.bigine}
       patterns:
       - include: '#action'
@@ -245,24 +269,24 @@ repository:
   for-state:
     patterns:
     - match: ^\t+(当数据)(?:（([^，\s]+?)，([^，\s](?:|[^，]*[^，\s]))(?:|，(不?[等大小]于))）|(（.*）))：?$\n?
-      name: meta.bigine.ref.bracket.state
+      name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
       captures:
         '1': {name: keyword.operator.bigine}
-        '2': {name: variable.other.bigine}
+        '2': {name: variable.other.state.bigine}
         '3': {name: constant.character.bigine}
         '4': {name: constant.language.bigine}
         '5': {name: invalid.illegal.bigine}
     - match: ^\t+(对比数据)(?:（([^，\s]+)）|(（.*）))：?$\n?
-      name: meta.bigine.ref.bracket.state
+      name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
       captures:
         '1': {name: keyword.operator.bigine}
-        '2': {name: variable.other.bigine}
+        '2': {name: variable.other.state.bigine}
         '3': {name: invalid.illegal.bigine}
     - match: ^\t+((?:设置|增加)数据)(?:（([^，\s]+)）|(（.*）))(?:：(\S(?:|.*\S))|(：.*))$\n?
-      name: meta.bigine.ref.bracket.state
+      name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
       captures:
         '1': {name: keyword.operator.bigine}
-        '2': {name: variable.other.bigine}
+        '2': {name: variable.other.state.bigine}
         '3': {name: invalid.illegal.bigine}
         '4': {name: constant.character.bigine}
         '5': {name: invalid.illegal.bigine}
@@ -278,7 +302,7 @@ repository:
   for-director:
     patterns:
     - match: ^\t+(设置人物|人物出场)(?:|（([左中右])）|(（.*）))(?:：([^，\s](?:|[^，]*[^，\s]))(?:|，([^，\s]+))|(：.*))$\n?
-      name: meta.bigine.ref.colon.char meta.bigine.ref.comma.pose
+      name: meta.bigine.ref.char.colon meta.bigine.after.colon meta.bigine.ref.pose.comma meta.bigine.after.comma
       captures:
         '1': {name: keyword.control.bigine}
         '2': {name: constant.language.bigine}
@@ -287,31 +311,31 @@ repository:
         '5': {name: entity.other.attribute-name.bigine}
         '6': {name: invalid.illegal.bigine}
     - match: ^\t+(人物离场)(?:（([^，\s]+)）|(（.*）))：?$\n?
-      name: meta.bigine.ref.bracket.char
+      name: meta.bigine.ref.char.bracket meta.bigine.after.bracket
       captures:
         '1': {name: keyword.control.bigine}
         '2': {name: entity.other.inherited-class.bigine}
         '3': {name: invalid.illegal.bigine}
     - match: ^\t+(播放音乐)(?:（([^，\s]+)）|(（.*）))：?$\n?
-      name: meta.bigine.ref.bracket.bgm
+      name: meta.bigine.ref.bgm.bracket meta.bigine.after.bracket
       captures:
         '1': {name: keyword.control.bigine}
         '2': {name: entity.other.inherited-class.bigine}
         '3': {name: invalid.illegal.bigine}
     - match: ^\t+(播放音效)(?:（([^，\s]+)）|(（.*）))：?$\n?
-      name: meta.bigine.ref.bracket.se
+      name: meta.bigine.ref.se.bracket meta.bigine.after.bracket
       captures:
         '1': {name: keyword.control.bigine}
         '2': {name: entity.other.inherited-class.bigine}
         '3': {name: invalid.illegal.bigine}
     - match: ^\t+(展示特写)(?:（([^，\s]+)）|(（.*）))：?$\n?
-      name: meta.bigine.ref.bracket.cg
+      name: meta.bigine.ref.cg.bracket meta.bigine.after.bracket
       captures:
         '1': {name: keyword.control.bigine}
         '2': {name: entity.other.inherited-class.bigine}
         '3': {name: invalid.illegal.bigine}
     - match: ^\t+((?:设置|进入)房间)(?:（([^，\s]+)）|(（.*）))：?$\n?
-      name: meta.bigine.ref.bracket.room
+      name: meta.bigine.ref.room.bracket meta.bigine.after.bracket
       captures:
         '1': {name: keyword.control.bigine}
         '2': {name: entity.other.inherited-class.bigine}
@@ -322,7 +346,7 @@ repository:
         '2': {name: entity.other.attribute-name.bigine}
         '3': {name: invalid.illegal.bigine}
     - match: ^\t+(改变神态)(?:（([^，\s]+)）|(（.*）))(?:：([^，\s]+)|(：.*))$\n?
-      name: meta.bigine.ref.bracket.char meta.bigine.ref.colon.pose
+      name: meta.bigine.ref.char.bracket meta.bigine.after.bracket meta.bigine.ref.pose.colon meta.bigine.after.colon
       captures:
         '1': {name: keyword.control.bigine}
         '2': {name: entity.other.inherited-class.bigine}
@@ -338,7 +362,7 @@ repository:
       captures:
         '1': {name: keyword.control.bigine}
     - match: ^\t+(人物移动)(?:（([^，\s]+)）|(（.*）))(?:：([左中右])|(：.*))$\n?
-      name: meta.bigine.ref.bracket.char
+      name: meta.bigine.ref.char.bracket meta.bigine.after.bracket
       captures:
         '1': {name: keyword.control.bigine}
         '2': {name: entity.other.inherited-class.bigine}
@@ -354,7 +378,7 @@ repository:
       '2': {name: keyword.control.bigine}
     patterns:
     - match: (?<=对白)(?:（([^，\s]+)，([^，\s]+)(?:|，(\S(?:|.*?\S)))）|(（.*）))(?=：)
-      name: meta.bigine.ref.bracket.char meta.bigine.ref.comma.char
+      name: meta.bigine.ref.char.bracket meta.bigine.after.bracket meta.bigine.ref.char.comma meta.bigine.after.comma
       captures:
         '1': {name: entity.other.inherited-class.bigine}
         '2': {name: entity.other.inherited-class.bigine}
@@ -369,8 +393,8 @@ repository:
       - match: 〈(\S+?)〉|＜(\S+?)＞
         name: string.interpolated.bigine
         captures:
-          '1': {name: variable.other.bigine}
-          '2': {name: variable.other.bigine}
+          '1': {name: variable.other.state.bigine}
+          '2': {name: variable.other.state.bigine}
 
   action:
     patterns:
@@ -393,7 +417,7 @@ repository:
     patterns:
     - comment: scene type
       match: ^\t(类型)：(?:((?:开始|完结|失败)时|(?:进入|离开)（([^，\s]+?)）(?:前|后))|(.*))$\n?
-      name: meta.bigine.scene.type meta.bigine.ref.bracket.room
+      name: meta.bigine.scene.type meta.bigine.ref.room.bracket meta.bigine.after.bracket
       captures:
         '1': {name: storage.modifier.bigine}
         '2': {name: constant.language.bigine}

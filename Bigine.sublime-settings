@@ -1,8 +1,8 @@
 {
     "auto_complete_triggers": [
-        { "selector": "text.bigine meta.bigine.ref.bracket", "characters": "（" },
-        { "selector": "text.bigine meta.bigine.ref.comma", "characters": "，" },
-        { "selector": "text.bigine meta.bigine.ref.colon", "characters": "：" }
+        { "selector": "text.bigine meta.bigine.after.bracket", "characters": "（" },
+        { "selector": "text.bigine meta.bigine.after.comma", "characters": "，" },
+        { "selector": "text.bigine meta.bigine.after.colon", "characters": "：" }
     ],
     "default_line_ending": "unix",
     "ensure_newline_at_eof_on_save": true,

@@ -4,7 +4,7 @@ class StateHandler(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
         if not len(view.find_by_selector('text.bigine')):
             return []
-        if 1 < len(locations) or not view.score_selector(locations[0], 'meta.bigine.ref.bracket.state'):
+        if 1 < len(locations) or not view.score_selector(locations[0], 'meta.bigine.ref.state'):
             return ([], sublime.INHIBIT_WORD_COMPLETIONS)
         pos = prefix.rfind('（')
         options = []
@@ -14,7 +14,7 @@ class StateHandler(sublime_plugin.EventListener):
             command = prefix[0:pos]
             prefix2 = prefix[pos:]
             registry = {}
-            for region in view.find_by_selector('variable.other.bigine'):
+            for region in view.find_by_selector('variable.other.state.bigine'):
                 name = view.substr(region)
                 if name in registry:
                     continue

@@ -1,4 +1,6 @@
 [
+    { "keys": ["ctrl+alt+n"], "command": "bigine_new" },
+    { "keys": ["ctrl+alt+b"], "command": "bigine_publish" },
     { "keys": ["alt+space"], "command": "auto_complete", "context":
         [
             { "key": "selector", "operator": "equal", "operand": "text.bigine" }

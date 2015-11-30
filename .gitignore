@@ -1,13 +1,19 @@
-*.*
+/*
 
 !.gitignore
 
+!Completions/
+!Snippets/
+
+!Bigine.sublime-build
 !Bigine.sublime-settings
 !Bigine.tmLanguage
 !Bigine.tmPreferences
 !Bigine.YAML-tmLanguage
 !Bigine.YAML-tmPreferences
 !bootstrap.html
+!Main.sublime-menu
+!Makefile
 
 !*.py
-!*.sublime-*
+!*.sublime-keymap

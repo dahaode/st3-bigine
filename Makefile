@@ -3,6 +3,7 @@ install = $(HOME)/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packa
 files = $(wildcard Bigine.tm*) \
 	Bigine.sublime-settings Bigine.sublime-build Main.sublime-menu \
 	$(shell ls Default*.sublime-keymap | sed 's/ /?/g') \
+	$(shell ls Default*.sublime-mousemap | sed 's/ /?/g') \
 	$(wildcard Completions/*.sublime-completions) \
 	$(wildcard Snippets/*.sublime-snippet) \
 	$(wildcard *.py) $(wildcard Resources/*)

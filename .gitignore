@@ -17,3 +17,4 @@
 
 !*.py
 !*.sublime-keymap
+!*.sublime-mousemap

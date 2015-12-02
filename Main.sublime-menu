@@ -22,6 +22,14 @@
 						"caption": "-"
 					},
 					{
+						"caption": "查看",
+						"id": "bigine_inspect",
+						"command": "bigine_inspect"
+					},
+					{
+						"caption": "-"
+					},
+					{
 						"caption": "for Bigine v0.16.0 pre 540e21d8",
 						"id": "bigine_changelog",
 						"command": "bigine_changelog"

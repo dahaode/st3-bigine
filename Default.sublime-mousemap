@@ -1,6 +1,6 @@
 [
     {
-        "button": "button1", "count": 2, "modifiers": ["alt"],
-        "command": "bigine_inspect"
+        "button": "button1", "count": 1, "modifiers": ["alt"],
+        "press_command": "bigine_inspect"
     }
 ]

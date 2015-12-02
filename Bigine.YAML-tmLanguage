@@ -201,9 +201,10 @@ repository:
 
   choose:
     patterns:
-    - begin: ^(\t+)(选择)(?:|（([^，\s]+)）|(（.*）))(?:|：(\S+)|(：.*))$
+    - begin: ^(\t+)(选择)(?:|（([^，\s]+)）|(（.*）))(?:|：(\S+)|(：.*))$\n?
       end: ^(?!\1\t)
-      name: meta.bigine.literal meta.bigine.ref.state.bracket meta.bigine.after.bracket meta.bigine.ref.choose.colon meta.bigine.after.colon
+      name: meta.bigine.ref.state.bracket meta.bigine.after.bracket meta.bigine.ref.choose.colon meta.bigine.after.colon
+      contentName: meta.bigine.literal
       beginCaptures:
         '2': {name: keyword.control.bigine}
         '3': {name: variable.other.state.bigine}
@@ -213,9 +214,10 @@ repository:
       patterns:
       - include: '#option'
       - include: '#illegal'
-    - begin: ^(\t+)(定义选择)(?:：(\S+)|(：.*))$
+    - begin: ^(\t+)(定义选择)(?:：(\S+)|(：.*))$\n?
       end: ^(?!\1\t)
-      name: meta.bigine.literal meta.bigine.ref.choose.colon meta.bigine.after.colon
+      name: meta.bigine.ref.choose.colon meta.bigine.after.colon
+      contentName: meta.bigine.literal
       beginCaptures:
         '2': {name: keyword.operator.bigine}
         '3': {name: variable.other.choose.bigine}
@@ -232,9 +234,10 @@ repository:
         '4': {name: invalid.illegal.bigine}
 
   mxximum:
-    begin: ^(\t+)(最[大小]数据)(?:|（([^，\s]+)）|(（.*）))：?$
+    begin: ^(\t+)(最[大小]数据)(?:|（([^，\s]+)）|(（.*）))：?$\n?
     end: ^(?!\1\t)
-    name: meta.bigine.literal meta.bigine.ref.state.bracket meta.bigine.after.bracket
+    name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
+    contentName: meta.bigine.literal
     beginCaptures:
       '2': {name: keyword.operator.bigine}
       '3': {name: variable.other.state.bigine}

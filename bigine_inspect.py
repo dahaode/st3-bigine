@@ -20,17 +20,24 @@ class BigineInspectCommand(sublime_plugin.TextCommand):
             self._type = ''
             return False
         self._point = pos
-        if view.score_selector(pos, 'meta.bigine.suite constant.language.bigine'):
-            self._clob = view.substr(view.extract_scope(pos))
-            self._type = '素材包'
-            return True
-        if view.score_selector(pos, 'meta.bigine.theme constant.language.bigine'):
-            self._clob = view.substr(view.extract_scope(pos))
-            self._type = '主题'
-            return True
-        if view.score_selector(pos, 'meta.bigine storage, meta.bigine keyword'):
+        if view.score_selector(pos, 'meta.bigine.suite'):
             self._clob = view.substr(view.extract_scope(pos))
             found = self._clob.find('：')
+            self._clob = self._clob[1 + found:]
+            self._type = '素材包'
+            return True
+        if view.score_selector(pos, 'meta.bigine.theme'):
+            self._clob = view.substr(view.extract_scope(pos))
+            found = self._clob.find('：')
+            self._clob = self._clob[1 + found:]
+            self._type = '主题'
+            return True
+        if view.score_selector(pos, 'meta.bigine - meta.bigine.literal'):
+            self._clob = view.substr(view.line(pos)).strip()
+            found = self._clob.find('：')
+            if -1 != found:
+                self._clob = self._clob[0:found]
+            found = self._clob.find('（')
             if -1 != found:
                 self._clob = self._clob[0:found]
             self._type = '语法'

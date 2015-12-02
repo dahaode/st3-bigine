@@ -147,7 +147,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(\t+)(选择)(?:|（([^，\s]+)）|(（.*）))(?:|：(\S+)|(：.*))$</string>
+					<string>^(\t+)(选择)(?:|（([^，\s]+)）|(（.*）))(?:|：(\S+)|(：.*))$\n?</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>2</key>
@@ -176,10 +176,12 @@
 							<string>invalid.illegal.bigine</string>
 						</dict>
 					</dict>
+					<key>contentName</key>
+					<string>meta.bigine.literal</string>
 					<key>end</key>
 					<string>^(?!\1\t)</string>
 					<key>name</key>
-					<string>meta.bigine.literal meta.bigine.ref.state.bracket meta.bigine.after.bracket meta.bigine.ref.choose.colon meta.bigine.after.colon</string>
+					<string>meta.bigine.ref.state.bracket meta.bigine.after.bracket meta.bigine.ref.choose.colon meta.bigine.after.colon</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -194,7 +196,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>^(\t+)(定义选择)(?:：(\S+)|(：.*))$</string>
+					<string>^(\t+)(定义选择)(?:：(\S+)|(：.*))$\n?</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>2</key>
@@ -213,10 +215,12 @@
 							<string>invalid.illegal.bigine</string>
 						</dict>
 					</dict>
+					<key>contentName</key>
+					<string>meta.bigine.literal</string>
 					<key>end</key>
 					<string>^(?!\1\t)</string>
 					<key>name</key>
-					<string>meta.bigine.literal meta.bigine.ref.choose.colon meta.bigine.after.colon</string>
+					<string>meta.bigine.ref.choose.colon meta.bigine.after.colon</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -779,7 +783,7 @@
 		<key>mxximum</key>
 		<dict>
 			<key>begin</key>
-			<string>^(\t+)(最[大小]数据)(?:|（([^，\s]+)）|(（.*）))：?$</string>
+			<string>^(\t+)(最[大小]数据)(?:|（([^，\s]+)）|(（.*）))：?$\n?</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>2</key>
@@ -798,10 +802,12 @@
 					<string>invalid.illegal.bigine</string>
 				</dict>
 			</dict>
+			<key>contentName</key>
+			<string>meta.bigine.literal</string>
 			<key>end</key>
 			<string>^(?!\1\t)</string>
 			<key>name</key>
-			<string>meta.bigine.literal meta.bigine.ref.state.bracket meta.bigine.after.bracket</string>
+			<string>meta.bigine.ref.state.bracket meta.bigine.after.bracket</string>
 			<key>patterns</key>
 			<array>
 				<dict>

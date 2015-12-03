@@ -256,9 +256,43 @@
 							<key>name</key>
 							<string>invalid.illegal.bigine</string>
 						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>string.quoted.double.bigine</string>
+						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+((?:添加|去除)选项)(?:（([^，\s]+)，([^，\s]+)）|(（.*）))：?$\n?</string>
+					<string>^\t+(添加选项)(?:（([^，\s]+)，([^，\s]+)）|(（.*）))(?:|：(.*))$\n?</string>
+					<key>name</key>
+					<string>meta.bigine.ref.choose.bracket meta.bigine.after.bracket</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.bigine</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.choose.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>constant.character.bigine</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\t+(去除选项)(?:（([^，\s]+)，([^，\s]+)）|(（.*）))：?$\n?</string>
 					<key>name</key>
 					<string>meta.bigine.ref.choose.bracket meta.bigine.after.bracket</string>
 				</dict>

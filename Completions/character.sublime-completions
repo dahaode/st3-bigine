@@ -1,7 +1,7 @@
 {
     "scope": "text.bigine meta.bigine.char - meta.bigine.char.poses",
     "completions": [
-        { "trigger": "头像", "contents": "头像：" },
+        { "trigger": "头像", "contents": "头像：${0:图片UUID}" },
         { "trigger": "姿态", "contents": "姿态：" }
     ]
 }

@@ -1,7 +1,7 @@
 {
     "scope": "text.bigine meta.bigine.map - meta.bigine.map.point",
     "completions": [
-        { "trigger": "底图", "contents": "底图：" },
-        { "trigger": "交互点", "contents": "交互点${1:（$2）}：" }
+        { "trigger": "底图", "contents": "底图：${0:图片UUID}" },
+        { "trigger": "交互点", "contents": "交互点${1:（${2:引用地图交互点名}）}：" }
     ]
 }

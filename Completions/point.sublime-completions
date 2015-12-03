@@ -1,8 +1,8 @@
 {
     "scope": "text.bigine meta.bigine.map.point",
     "completions": [
-        { "trigger": "高亮", "contents": "高亮：" },
-        { "trigger": "对应房间", "contents": "对应房间：" },
-        { "trigger": "区域", "contents": "区域：" }
+        { "trigger": "高亮", "contents": "高亮：${0:图片UUID}" },
+        { "trigger": "对应房间", "contents": "对应房间：${0:房间名}" },
+        { "trigger": "区域", "contents": "区域：${1:上边距}，${2:右边距}，${3:下边距}，${4:左边距}" }
     ]
 }

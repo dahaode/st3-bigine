@@ -1,6 +1,6 @@
 {
     "scope": "text.bigine meta.bigine.cg",
     "completions": [
-        { "trigger": "画面", "contents": "画面：" }
+        { "trigger": "画面", "contents": "画面：${0:图片UUID}" }
     ]
 }

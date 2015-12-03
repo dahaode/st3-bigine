@@ -1,7 +1,7 @@
 {
     "scope": "text.bigine meta.bigine.room - meta.bigine.char.snaps",
     "completions": [
-        { "trigger": "使用地图", "contents": "使用地图：" },
+        { "trigger": "使用地图", "contents": "使用地图：${0:地图名}" },
         { "trigger": "时刻", "contents": "时刻：" }
     ]
 }

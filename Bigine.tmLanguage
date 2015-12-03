@@ -694,16 +694,23 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>string.quoted.double.bigine</string>
+							<string>variable.other.state.bigine</string>
 						</dict>
 						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.state.bigine</string>
+						</dict>
+						<key>4</key>
 						<dict>
 							<key>name</key>
 							<string>invalid.illegal.bigine</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(自动存档)(?:|（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<string>^\t+(复制数据)(?:（([^，\s]+)，([^，\s]+)）|(（.*）))：?$\n?</string>
+					<key>name</key>
+					<string>meta.bigine.ref.state.bracket meta.bigine.after.bracket meta.bigine.ref.state.comma meta.bigine.after.comma</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -726,6 +733,28 @@
 					</dict>
 					<key>match</key>
 					<string>^\t+(当时间)(?:（([^，\s]+)）|(（.*）))：?$</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.bigine</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>string.quoted.double.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\t+(自动存档)(?:|（([^，\s]+)）|(（.*）))：?$\n?</string>
 				</dict>
 				<dict>
 					<key>captures</key>

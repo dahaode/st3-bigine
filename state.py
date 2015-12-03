@@ -6,7 +6,12 @@ class StateHandler(sublime_plugin.EventListener):
             return []
         if 1 < len(locations) or not view.score_selector(locations[0], 'meta.bigine.ref.state'):
             return ([], sublime.INHIBIT_WORD_COMPLETIONS)
-        pos = prefix.rfind('（')
+        pos1 = pos2 = 0
+        if view.score_selector(locations[0], 'meta.bigine.ref.state.bracket'):
+            pos1 = prefix.rfind('（')
+        if view.score_selector(locations[0], 'meta.bigine.ref.state.comma'):
+            pos2 = prefix.rfind('，')
+        pos = max(pos1, pos2)
         options = []
         options2 = []
         if 0 < pos:

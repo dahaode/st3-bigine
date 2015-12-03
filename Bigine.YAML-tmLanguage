@@ -279,7 +279,7 @@ repository:
         '3': {name: constant.character.bigine}
         '4': {name: constant.language.bigine}
         '5': {name: invalid.illegal.bigine}
-    - match: ^\t+(对比数据)(?:（([^，\s]+)）|(（.*）))：?$\n?
+    - match: ^\t+((?:对比|随机)数据)(?:（([^，\s]+)）|(（.*）))：?$\n?
       name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
       captures:
         '1': {name: keyword.operator.bigine}

@@ -611,7 +611,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(对比数据)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<string>^\t+((?:对比|随机)数据)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
 					<key>name</key>
 					<string>meta.bigine.ref.state.bracket meta.bigine.after.bracket</string>
 				</dict>

@@ -13,6 +13,7 @@
         { "trigger": "如果数据", "contents": "如果数据（$1）：" },
         { "trigger": "当数据", "contents": "当数据（$1，$2${3:，${4:不等于}}）" },
         { "trigger": "对比数据", "contents": "对比数据（$1）" },
+        { "trigger": "随机数据", "contents": "随机数据（$1）" },
         { "trigger": "设置数据", "contents": "设置数据（$1）：" },
         { "trigger": "增加数据", "contents": "增加数据（$1）：" },
         "自动存档",

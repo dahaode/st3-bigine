@@ -3,4 +3,4 @@
 !.gitignore
 
 !bootstrap.html
-!CHANGELOG.md
+!*.md

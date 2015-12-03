@@ -713,6 +713,28 @@
 							<key>name</key>
 							<string>keyword.operator.bigine</string>
 						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.attribute-name.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\t+(当时间)(?:（([^，\s]+)）|(（.*）))：?$</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.bigine</string>
+						</dict>
 					</dict>
 					<key>match</key>
 					<string>^\t+(游戏(?:完结|失败)|循环中止)：?$\n?</string>

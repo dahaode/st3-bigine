@@ -301,6 +301,11 @@ repository:
         '3': {name: invalid.illegal.bigine}
         '4': {name: constant.character.bigine}
         '5': {name: invalid.illegal.bigine}
+    - match: ^\t+(当时间)(?:（([^，\s]+)）|(（.*）))：?$
+      captures:
+        '1': {name: keyword.operator.bigine}
+        '2': {name: entity.other.attribute-name.bigine}
+        '3': {name: invalid.illegal.bigine}
     - match: ^\t+(自动存档)(?:|（([^，\s]+)）|(（.*）))：?$\n?
       captures:
         '1': {name: keyword.operator.bigine}

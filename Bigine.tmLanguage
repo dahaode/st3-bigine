@@ -32,6 +32,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#arithmetic</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#block</string>
 				</dict>
 				<dict>
@@ -49,6 +53,91 @@
 				<dict>
 					<key>include</key>
 					<string>#illegal</string>
+				</dict>
+			</array>
+		</dict>
+		<key>arithmetic</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>^(\t+)(数据合值)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.state.bigine</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>^(?!\1\t)</string>
+					<key>name</key>
+					<string>meta.bigine.ref.state.bracket meta.bigine.after.bracket</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#state</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#illegal</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>^(\t+)(数据差值)(?:（([^，\s]+)，([^，\s]+)）|(（.*）))：?$\n?</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.state.bigine</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.state.bigine</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>^(?!\1\t)</string>
+					<key>name</key>
+					<string>meta.bigine.ref.state.bracket meta.bigine.after.bracket meta.bigine.ref.state.comma meta.bigine.after.comma</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#state</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#illegal</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -887,8 +976,6 @@
 					<string>invalid.illegal.bigine</string>
 				</dict>
 			</dict>
-			<key>contentName</key>
-			<string>meta.bigine.literal</string>
 			<key>end</key>
 			<string>^(?!\1\t)</string>
 			<key>name</key>
@@ -896,16 +983,8 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>variable.other.state.bigine</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>^\t+(\S+)$\n?</string>
+					<key>include</key>
+					<string>#state</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1072,6 +1151,19 @@
 					<string>#illegal</string>
 				</dict>
 			</array>
+		</dict>
+		<key>state</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.state.bigine</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\t+(\S+)$\n?</string>
 		</dict>
 		<key>struct</key>
 		<dict>

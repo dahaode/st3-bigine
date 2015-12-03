@@ -241,20 +241,46 @@ repository:
         '3': {name: constant.character.bigine}
         '4': {name: invalid.illegal.bigine}
 
+  state:
+    match: ^\t+(\S+)$\n?
+    captures:
+      '1': {name: variable.other.state.bigine}
+
   mxximum:
     begin: ^(\t+)(最[大小]数据)(?:|（([^，\s]+)）|(（.*）))：?$\n?
     end: ^(?!\1\t)
     name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
-    contentName: meta.bigine.literal
     beginCaptures:
       '2': {name: keyword.operator.bigine}
       '3': {name: variable.other.state.bigine}
       '4': {name: invalid.illegal.bigine}
     patterns:
-    - match: ^\t+(\S+)$\n?
-      captures:
-        '1': {name: variable.other.state.bigine}
+    - include: '#state'
     - include: '#illegal'
+
+  arithmetic:
+    patterns:
+    - begin: ^(\t+)(数据合值)(?:（([^，\s]+)）|(（.*）))：?$\n?
+      end: ^(?!\1\t)
+      name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
+      beginCaptures:
+        '2': {name: keyword.operator.bigine}
+        '3': {name: variable.other.state.bigine}
+        '4': {name: invalid.illegal.bigine}
+      patterns:
+      - include: '#state'
+      - include: '#illegal'
+    - begin: ^(\t+)(数据差值)(?:（([^，\s]+)，([^，\s]+)）|(（.*）))：?$\n?
+      end: ^(?!\1\t)
+      name: meta.bigine.ref.state.bracket meta.bigine.after.bracket meta.bigine.ref.state.comma meta.bigine.after.comma
+      beginCaptures:
+        '2': {name: keyword.operator.bigine}
+        '3': {name: variable.other.state.bigine}
+        '4': {name: variable.other.state.bigine}
+        '5': {name: invalid.illegal.bigine}
+      patterns:
+      - include: '#state'
+      - include: '#illegal'
 
   block:
     patterns:
@@ -423,6 +449,7 @@ repository:
     patterns:
     - include: '#choose'
     - include: '#mxximum'
+    - include: '#arithmetic'
     - include: '#block'
     - include: '#for-state'
     - include: '#for-director'

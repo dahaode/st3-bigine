@@ -81,6 +81,8 @@
 							<string>invalid.illegal.bigine</string>
 						</dict>
 					</dict>
+					<key>contentName</key>
+					<string>meta.bigine.literal meta.bigine.ref.state.perline</string>
 					<key>end</key>
 					<string>^(?!\1\t)</string>
 					<key>name</key>
@@ -123,6 +125,8 @@
 							<string>invalid.illegal.bigine</string>
 						</dict>
 					</dict>
+					<key>contentName</key>
+					<string>meta.bigine.literal meta.bigine.ref.state.perline</string>
 					<key>end</key>
 					<string>^(?!\1\t)</string>
 					<key>name</key>
@@ -976,6 +980,8 @@
 					<string>invalid.illegal.bigine</string>
 				</dict>
 			</dict>
+			<key>contentName</key>
+			<string>meta.bigine.literal meta.bigine.ref.state.perline</string>
 			<key>end</key>
 			<string>^(?!\1\t)</string>
 			<key>name</key>

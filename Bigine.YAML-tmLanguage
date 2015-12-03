@@ -250,6 +250,7 @@ repository:
     begin: ^(\t+)(最[大小]数据)(?:|（([^，\s]+)）|(（.*）))：?$\n?
     end: ^(?!\1\t)
     name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
+    contentName: meta.bigine.literal meta.bigine.ref.state.perline
     beginCaptures:
       '2': {name: keyword.operator.bigine}
       '3': {name: variable.other.state.bigine}
@@ -263,6 +264,7 @@ repository:
     - begin: ^(\t+)(数据合值)(?:（([^，\s]+)）|(（.*）))：?$\n?
       end: ^(?!\1\t)
       name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
+      contentName: meta.bigine.literal meta.bigine.ref.state.perline
       beginCaptures:
         '2': {name: keyword.operator.bigine}
         '3': {name: variable.other.state.bigine}
@@ -273,6 +275,7 @@ repository:
     - begin: ^(\t+)(数据差值)(?:（([^，\s]+)，([^，\s]+)）|(（.*）))：?$\n?
       end: ^(?!\1\t)
       name: meta.bigine.ref.state.bracket meta.bigine.after.bracket meta.bigine.ref.state.comma meta.bigine.after.comma
+      contentName: meta.bigine.literal meta.bigine.ref.state.perline
       beginCaptures:
         '2': {name: keyword.operator.bigine}
         '3': {name: variable.other.state.bigine}

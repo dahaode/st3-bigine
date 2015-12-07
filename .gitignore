@@ -16,6 +16,7 @@
 !Main.sublime-menu
 !Makefile
 !messages.json
+!README.md
 
 !*.py
 !*.sublime-keymap

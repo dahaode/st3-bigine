@@ -6,7 +6,7 @@ files = $(wildcard Bigine.tm*) \
 	$(shell ls Default*.sublime-mousemap | sed 's/ /?/g') \
 	$(wildcard Completions/*.sublime-completions) \
 	$(wildcard Snippets/*.sublime-snippet) \
-	$(wildcard *.py) $(wildcard Resources/*)
+	$(wildcard *.py) $(wildcard Resources/*) LICENSE README.md
 sp:=
 sp+=
 lb:=(

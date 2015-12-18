@@ -1,6 +1,7 @@
 [
     { "keys": ["ctrl+alt+n"], "command": "bigine_new" },
     { "keys": ["ctrl+alt+b"], "command": "bigine_publish" },
+    { "keys": ["f1"], "command": "bigine_inspect" },
     { "keys": ["ctrl+alt+i"], "command": "bigine_inspect" },
     { "keys": ["alt+space"], "command": "auto_complete", "context":
         [

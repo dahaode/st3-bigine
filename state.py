@@ -11,6 +11,8 @@ class StateHandler(sublime_plugin.EventListener):
             pos1 = prefix.rfind('（')
         if view.score_selector(locations[0], 'meta.bigine.ref.state.comma'):
             pos2 = prefix.rfind('，')
+        if view.score_selector(locations[0], 'meta.bigine.ref.state.colon'):
+            pos2 = prefix.rfind('：')
         pos = max(pos1, pos2)
         options = []
         options2 = []

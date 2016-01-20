@@ -11,6 +11,8 @@
         { "trigger": "音乐", "contents": "音乐：" },
         { "trigger": "音效", "contents": "音效：" },
         { "trigger": "特写", "contents": "特写：" },
+        { "trigger": "状态", "contents": "状态：" },
+        { "trigger": "面板", "contents": "面板：" },
         { "trigger": "事件", "contents": "事件：" },
     ]
 }

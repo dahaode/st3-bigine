@@ -391,6 +391,42 @@
 				</dict>
 			</array>
 		</dict>
+		<key>empty-field</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>constant.language.bigine</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\t(空)$</string>
+		</dict>
+		<key>field</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted.double.bigine</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.state.bigine</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\t(\S+)(?:：(\S+)|(：))$</string>
+		</dict>
 		<key>for-director</key>
 		<dict>
 			<key>patterns</key>
@@ -1777,6 +1813,94 @@
 							<string>^\t(画面)(?:：(\h{8}-\h{4}-\h{4}-\h{4}-\h{12})|(：.*))$\n?</string>
 							<key>name</key>
 							<string>meta.bigine.cg.source</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#illegal</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>^(状态)(?:|：|：(\S+))$\n?</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.bigine</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>status</string>
+					<key>contentName</key>
+					<string>meta.bigine.literal meta.bigine.ref.state.perline meta.bigine.ref.state.colon meta.bigine.after.colon</string>
+					<key>end</key>
+					<string>^(?=$|\S)</string>
+					<key>name</key>
+					<string>meta.bigine.status</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#field</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#empty-field</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#state</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#illegal</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>^(面板)(?:|：|：(\S+))$\n?</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.bigine</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>status</string>
+					<key>contentName</key>
+					<string>meta.bigine.literal meta.bigine.ref.state.perline meta.bigine.ref.state.colon meta.bigine.after.colon</string>
+					<key>end</key>
+					<string>^(?=$|\S)</string>
+					<key>name</key>
+					<string>meta.bigine.status</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#field</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#empty-field</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#state</string>
 						</dict>
 						<dict>
 							<key>include</key>

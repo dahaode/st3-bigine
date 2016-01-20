@@ -21,6 +21,18 @@ repository:
       '3': {name: constant.language.bigine}
       '4': {name: invalid.illegal.bigine}
 
+  field:
+    match: ^\t(\S+)(?:：(\S+)|(：))$
+    captures:
+      '1': {name: string.quoted.double.bigine}
+      '2': {name: variable.other.state.bigine}
+      '3': {name: invalid.illegal.bigine}
+
+  empty-field:
+    match: ^\t(空)$
+    captures:
+      '1': {name: constant.language.bigine}
+
   struct:
     begin: ^(?=$|\S)
     end: ^(?=$|\S)
@@ -184,6 +196,32 @@ repository:
           '1': {name: storage.modifier.bigine}
           '2': {name: constant.language.bigine}
           '3': {name: invalid.illegal.bigine}
+      - include: '#illegal'
+    - comment: status
+      begin: ^(状态)(?:|：|：(\S+))$\n?
+      end: ^(?=$|\S)
+      name: meta.bigine.status
+      contentName: meta.bigine.literal meta.bigine.ref.state.perline meta.bigine.ref.state.colon meta.bigine.after.colon
+      beginCaptures:
+        '1': {name: storage.type.bigine}
+        '2': {name: invalid.illegal.bigine}
+      patterns:
+      - include: '#field'
+      - include: '#empty-field'
+      - include: '#state'
+      - include: '#illegal'
+    - comment: status
+      begin: ^(面板)(?:|：|：(\S+))$\n?
+      end: ^(?=$|\S)
+      name: meta.bigine.status
+      contentName: meta.bigine.literal meta.bigine.ref.state.perline meta.bigine.ref.state.colon meta.bigine.after.colon
+      beginCaptures:
+        '1': {name: storage.type.bigine}
+        '2': {name: invalid.illegal.bigine}
+      patterns:
+      - include: '#field'
+      - include: '#empty-field'
+      - include: '#state'
       - include: '#illegal'
     - include: '#illegal'
 

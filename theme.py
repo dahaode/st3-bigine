@@ -2,9 +2,14 @@ import sublime, sublime_plugin
 
 class ThemeHandler(sublime_plugin.EventListener):
     __themes = {
-        'dahao': '默认主题',
-        'fl9t': '凤唳九天',
-        '100': '高考恋爱100天'
+        "dahao": "默认主题",
+        "fl9t": "凤唳九天",
+        "100": "高考恋爱100天",
+        "lamnq": "恋爱模拟器",
+        "nfdzz": "年饭大作战",
+        "gqyb70": "国庆阅兵70周年",
+        "yml": "幽冥录",
+        "yml2": "幽冥录2"
     }
 
     def __validate(self, view):

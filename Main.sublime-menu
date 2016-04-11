@@ -33,6 +33,11 @@
 						"caption": "v0.1.3 for Bigine v0.18.0",
 						"id": "bigine_changelog",
 						"command": "bigine_changelog"
+					},
+					{
+						"caption": "检查更新…",
+						"id": "bigine_update",
+						"command": "bigine_update"
 					}
 				]
 			}

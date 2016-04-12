@@ -88,6 +88,14 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#action-camera-shake</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#action-curtains</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#illegal</string>
 				</dict>
 			</array>
@@ -315,6 +323,19 @@
 			<key>match</key>
 			<string>^(\t\t)(设置镜头)(（[快中慢]）)?$\n?</string>
 		</dict>
+		<key>action-camera-shake</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.bigine</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^(\t\t)(抖动镜头)$\n?</string>
+		</dict>
 		<key>action-camera-zoom</key>
 		<dict>
 			<key>captures</key>
@@ -540,6 +561,24 @@
 			</dict>
 			<key>match</key>
 			<string>^(\t\t)(删除元素)（(\S+)）：(\S+)$\n?</string>
+		</dict>
+		<key>action-curtains</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.bigine</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.camera.bigine</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^(\t\t)(切幕动画)(（((淡出淡入)|(水平百叶窗)|(垂直百叶窗))）)?$\n?</string>
 		</dict>
 		<key>action-def-coll</key>
 		<dict>

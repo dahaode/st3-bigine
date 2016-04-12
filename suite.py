@@ -79,11 +79,11 @@ class SuiteHandler(sublime_plugin.EventListener):
         return 0 < len(self.__entities)
 
     def __validate_suite(self, view):
-        if not self.__list(view) and not self.__load(view):
+        if not self.__list(view):
             return
         regions = view.find_by_selector('meta.bigine.suite constant.language')
         key = 'bigine.error.suite'
-        if 1 == len(regions) and (not len(self.__suites) or view.substr(regions[0]) in self.__suites):
+        if 1 == len(regions):
             sublime.status_message('')
             view.erase_regions(key)
             self.__load(view)

@@ -687,7 +687,7 @@ repository:
     match: ^(\t\t)(切幕动画)(（((淡出淡入)|(水平百叶窗)|(垂直百叶窗))）)?$\n?
     captures:
       '2': {name: keyword.operator.bigine}
-      '3': {name: variable.other.camera.bigine}
+      '3': {name: variable.other.curtains.bigine}
 
   action:
     patterns:

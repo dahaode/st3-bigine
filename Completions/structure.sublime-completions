@@ -1,0 +1,6 @@
+{
+    "scope": "text.bigine meta.bigine.structure - meta.bigine.structure.field",
+    "completions": [
+        { "trigger": "字段", "contents": "字段：${0:字段名}" }
+    ]
+}

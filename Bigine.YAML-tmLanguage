@@ -222,7 +222,7 @@ repository:
     name: meta.bigine.structure.field
     beginCaptures:
       '1': {name: storage.type.bigine}
-      '2': {name: constant.language.bigine}
+      '2': {name: variable.other.structure.bigine}
     patterns:
     - comment: structure field type
       match: ^\t\t(类别)(：(名称|人物|房间|特写|星|心))$\n?
@@ -235,7 +235,7 @@ repository:
       name: meta.bigine.structure.field.limit
       captures:
         '1': {name: storage.type.bigine}
-        '2': {name: entity.other.inherited-class.bigine}
+        '2': {name: constant.language.bigine}
     - include: '#illegal'
 
   struct-structure:
@@ -255,20 +255,20 @@ repository:
     name: meta.bigine.panel.simple.item
     beginCaptures:
       '1': {name: storage.type.bigine}
-      '2': {name: entity.name.type.structure.bigine}
+      '2': {name: variable.other.structure.bigine}
     patterns:
     - comment: real variable name
       match: ^\t\t\t(数据名)(：(\S+))$\n?
-      name: meta.bigine.panel.simple.item.data.name
+      name: meta.bigine.panel.simple.item.name
       captures:
         '1': {name: storage.type.bigine}
-        '2': {name: entity.other.inherited-class.bigine}
+        '2': {name: variable.other.structure.bigine}
     - comment: display type
       match: ^\t\t\t(数据类别)(：(星|心))$\n?
-      name: meta.bigine.panel.simple.item.data.type
+      name: meta.bigine.panel.simple.item.type
       captures:
         '1': {name: storage.type.bigine}
-        '2': {name: entity.other.inherited-class.bigine}
+        '2': {name: constant.language.bigine}
     - include: '#illegal'
 
   struct-panel-simple:
@@ -277,7 +277,7 @@ repository:
     name: meta.bigine.panel.simple
     beginCaptures:
       '1': {name: storage.type.bigine}
-      '2': {name: constant.character.bigine}
+      '2': {name: variable.other.panel.bigine}
     patterns:
     - include: '#struct-panel-simple-item'
     - include: '#illegal'
@@ -288,20 +288,20 @@ repository:
     name: meta.bigine.panel.coll
     beginCaptures:
       '1': {name: storage.type.bigine}
-      '2': {name: constant.character.bigine}
+      '2': {name: variable.other.panel.bigine}
     patterns:
     - comment: collection name defined
       match: ^\t\t(使用集合)(：(\S+))$\n?
       name: meta.bigine.panel.coll.name
       captures:
         '1': {name: storage.type.bigine}
-        '2': {name: entity.other.inherited-class.bigine}
+        '2': {name: constant.variable.bigine}
     - comment: collection structure defined
       match: ^\t\t(集合结构)(：(\S+))$\n?
       name: meta.bigine.panel.coll.structure
       captures:
         '1': {name: storage.type.bigine}
-        '2': {name: entity.other.inherited-class.bigine}
+        '2': {name: constant.language.bigine}
     - include: '#illegal'
 
   struct-panel:
@@ -318,7 +318,6 @@ repository:
   struct:
     begin: ^(?=$|\S)
     end: ^(?=$|\S)
-    name: meta.bigine.struct
     patterns:
     - include: '#struct-resource'
     - include: '#struct-theme'
@@ -602,14 +601,18 @@ repository:
       '2': {name: variable.other.data.def.bigine}
 
   action-def-data:
-    begin: ^(\t\t)(定义数据)（(\S+)）：(\S+)$\n?
+    # begin: ^(\t\t)(定义数据)（(\S+)）：(\S+)$\n?
+    begin: ^(\t\t)(定义数据)(?:(?:(（）)|（(\S+)）)(?:(?:：(\S+))|(：))|(：.*))$\n?
     end: ^(?!\1\t+)
     name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
     contentName: meta.bigine.literal meta.bigine.ref.state.perline
     beginCaptures:
       '2': {name: keyword.operator.bigine}
-      '3': {name: entity.other.inherited-class.bigine}
-      '4': {name: constant.variable.bigine}
+      '3': {name: invalid.illegal.bigine}
+      '4': {name: entity.other.inherited-class.bigine}
+      '5': {name: constant.variable.bigine}
+      '6': {name: invalid.illegal.bigine}
+      '7': {name: invalid.illegal.bigine}
     patterns:
     - include: '#def-data-per-line'
     - include: '#illegal'
@@ -620,74 +623,104 @@ repository:
       '1': {name: entity.other.inherited-class.bigine}
 
   action-def-coll:
-    begin: ^(\t\t)(定义集合)（(\S+)）：(\S+)$\n?
+    begin: ^(\t\t)(定义集合)(?:(?:(（）)|（(\S+)）)(?:(?:：(\S+))|(：))|(：.*))$\n?
     end: ^(?!\1\t+)
     name: meta.bigine.ref.struct.bracket meta.bigine.after.bracket
     contentName: meta.bigine.literal meta.bigine.ref.state.perline
     beginCaptures:
       '2': {name: keyword.operator.bigine}
-      '3': {name: entity.other.inherited-class.bigine}
-      '4': {name: constant.variable.bigine}
+      '3': {name: invalid.illegal.bigine}
+      '4': {name: entity.other.inherited-class.bigine}
+      '5': {name: constant.variable.bigine}
+      '6': {name: invalid.illegal.bigine}
+      '7': {name: invalid.illegal.bigine}
     patterns:
     - include: '#def-coll-per-line'
     - include: '#illegal'
 
   action-coll-pop:
-    match: ^(\t\t)(删除元素)（(\S+)）：(\S+)$\n?
+    match: ^(\t\t)(删除元素)(?:(?:(（）)|（(\S+)）)(?:(?:：(\S+))|(：))|(：.*))$\n?
     captures:
       '2': {name: keyword.operator.bigine}
-      '3': {name: constant.variable.bigine}
+      '3': {name: invalid.illegal.bigine}
       '4': {name: entity.other.inherited-class.bigine}
+      '5': {name: constant.variable.bigine}
+      '6': {name: invalid.illegal.bigine}
+      '7': {name: invalid.illegal.bigine}
 
   action-coll-append:
-    match: ^(\t\t)(增加元素)（(\S+)）：(\S+)$\n?
+    match: ^(\t\t)(增加元素)(?:(?:(（）)|（(\S+)）)(?:(?:：(\S+))|(：))|(：.*))$\n?
     captures:
       '2': {name: keyword.operator.bigine}
-      '3': {name: constant.variable.bigine}
+      '3': {name: invalid.illegal.bigine}
       '4': {name: entity.other.inherited-class.bigine}
+      '5': {name: constant.variable.bigine}
+      '6': {name: invalid.illegal.bigine}
+      '7': {name: invalid.illegal.bigine}
 
   action-pause:
-    match: ^(\t\t)(停顿)（([长中短])）?$\n?
+    match: ^\t+(停顿)(?:(?:(（）)|（(?:([短中长])|([^）]*))）)：?|(.*))$\n?
     captures:
-      '2': {name: keyword.operator.bigine}
-      '3': {name: variable.other.pause.bigine}
+      '1': {name: keyword.operator.bigine}
+      '2': {name: invalid.illegal.bigine}
+      '3': {name: constant.language.bigine}
+      '4': {name: invalid.illegal.bigine}
+      '5': {name: invalid.illegal.bigine}
 
   action-camera-set:
-    match: ^(\t\t)(设置镜头)(（[快中慢]）)?$\n?
+    match: ^\t+(设置镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)：?|(.*))$\n?
     captures:
-      '2': {name: keyword.operator.bigine}
-      '3': {name: variable.other.camera.bigine}
+      '1': {name: keyword.operator.bigine}
+      '2': {name: invalid.illegal.bigine}
+      '3': {name: constant.language.bigine}
+      '4': {name: invalid.illegal.bigine}
+      '5': {name: invalid.illegal.bigine}
 
   action-camera-reset:
-    match: ^(\t\t)(复位镜头)(（[快中慢]）)?$\n?
+    match: ^\t+(复位镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)：?|(.*))$\n?
     captures:
-      '2': {name: keyword.operator.bigine}
-      '3': {name: variable.other.camera.bigine}
+      '1': {name: keyword.operator.bigine}
+      '2': {name: invalid.illegal.bigine}
+      '3': {name: constant.language.bigine}
+      '4': {name: invalid.illegal.bigine}
+      '5': {name: invalid.illegal.bigine}
 
   action-camera-zoom:
-    match: ^(\t\t)(放大镜头)(（[快中慢]）)?：([左右上下][上下]?)$\n?
+    match: ^\t+(放大镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?
     captures:
-      '2': {name: keyword.operator.bigine}
-      '3': {name: variable.other.camera.bigine}
-      '4': {name: position.camera.bigine}
+      '1': {name: keyword.operator.bigine}
+      '2': {name: invalid.illegal.bigine}
+      '3': {name: constant.language.bigine}
+      '4': {name: invalid.illegal.bigine}
+      '5': {name: constant.language.bigine}
+      '6': {name: invalid.illegal.bigine}
+      '7': {name: invalid.illegal.bigine}
 
   action-camera-move:
-    match: ^(\t\t)(移动镜头)(（([快中慢])）)?：([左右上下][上下]?)$\n?
+    match: ^\t+(移动镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?
     captures:
-      '2': {name: keyword.operator.bigine}
-      '3': {name: variable.other.camera.bigine}
-      '4': {name: position.camera.bigine}
+      '1': {name: keyword.operator.bigine}
+      '2': {name: invalid.illegal.bigine}
+      '3': {name: constant.language.bigine}
+      '4': {name: invalid.illegal.bigine}
+      '5': {name: constant.language.bigine}
+      '6': {name: invalid.illegal.bigine}
+      '7': {name: invalid.illegal.bigine}
 
   action-camera-shake:
-    match: ^(\t\t)(抖动镜头)$\n?
+    match: ^\t+(抖动镜头)$\n?
     captures:
-      '2': {name: keyword.operator.bigine}
+      '1': {name: keyword.operator.bigine}
 
   action-curtains:
-    match: ^(\t\t)(切幕动画)(（((淡出淡入)|(水平百叶窗)|(垂直百叶窗))）)?$\n?
+    # match: ^\t+(切幕动画)(（((淡出淡入)|(水平百叶窗)|(垂直百叶窗))）)?$\n?
+    match: ^\t+(切幕动画)(?:(?:(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗)|([^）]*))）)：?|(.*))?$\n?
     captures:
-      '2': {name: keyword.operator.bigine}
-      '3': {name: variable.other.curtains.bigine}
+      '1': {name: keyword.operator.bigine}
+      '2': {name: invalid.illegal.bigine}
+      '3': {name: constant.language.bigine}
+      '4': {name: invalid.illegal.bigine}
+      '5': {name: invalid.illegal.bigine}
 
   action:
     patterns:

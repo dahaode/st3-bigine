@@ -1,0 +1,7 @@
+{
+    "scope": "text.bigine meta.bigine.panel - meta.bigine.panel.simple - meta.bigine.panel.coll",
+    "completions": [
+        { "trigger": "简单面板", "contents": "简单面板：${0:面板名称}" },
+        { "trigger": "集合面板", "contents": "集合面板：${0:面板名称}" }
+    ]
+}

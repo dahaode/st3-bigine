@@ -1,0 +1,7 @@
+{
+    "scope": "text.bigine meta.bigine.structure.field - meta.bigine.structure.field.type - meta.bigine.structure.field.limit",
+    "completions": [
+        { "trigger": "类别", "contents": "类别：" },
+        { "trigger": "上限", "contents": "上限：" }
+    ]
+}

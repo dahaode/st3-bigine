@@ -268,96 +268,166 @@
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.operator.bigine</string>
 				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.camera.bigine</string>
+					<string>constant.language.bigine</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>position.camera.bigine</string>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>constant.language.bigine</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(\t\t)(移动镜头)(（([快中慢])）)?：([左右上下][上下]?)$\n?</string>
+			<string>^\t+(移动镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?</string>
 		</dict>
 		<key>action-camera-reset</key>
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.operator.bigine</string>
 				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.camera.bigine</string>
+					<string>constant.language.bigine</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(\t\t)(复位镜头)(（[快中慢]）)?$\n?</string>
+			<string>^\t+(复位镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)：?|(.*))$\n?</string>
 		</dict>
 		<key>action-camera-set</key>
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.operator.bigine</string>
 				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.camera.bigine</string>
+					<string>constant.language.bigine</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(\t\t)(设置镜头)(（[快中慢]）)?$\n?</string>
+			<string>^\t+(设置镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)：?|(.*))$\n?</string>
 		</dict>
 		<key>action-camera-shake</key>
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.operator.bigine</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(\t\t)(抖动镜头)$\n?</string>
+			<string>^\t+(抖动镜头)$\n?</string>
 		</dict>
 		<key>action-camera-zoom</key>
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.operator.bigine</string>
 				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.camera.bigine</string>
+					<string>constant.language.bigine</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>position.camera.bigine</string>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>constant.language.bigine</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(\t\t)(放大镜头)(（[快中慢]）)?：([左右上下][上下]?)$\n?</string>
+			<string>^\t+(放大镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?</string>
 		</dict>
 		<key>action-choose</key>
 		<dict>
@@ -528,16 +598,31 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>constant.variable.bigine</string>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>entity.other.inherited-class.bigine</string>
 				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>constant.variable.bigine</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(\t\t)(增加元素)（(\S+)）：(\S+)$\n?</string>
+			<string>^(\t\t)(增加元素)(?:(?:(（）)|（(\S+)）)(?:(?:：(\S+))|(：))|(：.*))$\n?</string>
 		</dict>
 		<key>action-coll-pop</key>
 		<dict>
@@ -551,39 +636,69 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>constant.variable.bigine</string>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>entity.other.inherited-class.bigine</string>
 				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>constant.variable.bigine</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(\t\t)(删除元素)（(\S+)）：(\S+)$\n?</string>
+			<string>^(\t\t)(删除元素)(?:(?:(（）)|（(\S+)）)(?:(?:：(\S+))|(：))|(：.*))$\n?</string>
 		</dict>
 		<key>action-curtains</key>
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.operator.bigine</string>
 				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.curtains.bigine</string>
+					<string>constant.language.bigine</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(\t\t)(切幕动画)(（((淡出淡入)|(水平百叶窗)|(垂直百叶窗))）)?$\n?</string>
+			<string>^\t+(切幕动画)(?:(?:(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗)|([^）]*))）)：?|(.*))?$\n?</string>
 		</dict>
 		<key>action-def-coll</key>
 		<dict>
 			<key>begin</key>
-			<string>^(\t\t)(定义集合)（(\S+)）：(\S+)$\n?</string>
+			<string>^(\t\t)(定义集合)(?:(?:(（）)|（(\S+)）)(?:(?:：(\S+))|(：))|(：.*))$\n?</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>2</key>
@@ -594,12 +709,27 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.other.inherited-class.bigine</string>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
+					<string>entity.other.inherited-class.bigine</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
 					<string>constant.variable.bigine</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -623,7 +753,7 @@
 		<key>action-def-data</key>
 		<dict>
 			<key>begin</key>
-			<string>^(\t\t)(定义数据)（(\S+)）：(\S+)$\n?</string>
+			<string>^(\t\t)(定义数据)(?:(?:(（）)|（(\S+)）)(?:(?:：(\S+))|(：))|(：.*))$\n?</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>2</key>
@@ -634,12 +764,27 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.other.inherited-class.bigine</string>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
+					<string>entity.other.inherited-class.bigine</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
 					<string>constant.variable.bigine</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 			</dict>
 			<key>contentName</key>
@@ -993,19 +1138,34 @@
 		<dict>
 			<key>captures</key>
 			<dict>
-				<key>2</key>
+				<key>1</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.operator.bigine</string>
 				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>variable.other.pause.bigine</string>
+					<string>constant.language.bigine</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^(\t\t)(停顿)（([长中短])）?$\n?</string>
+			<string>^\t+(停顿)(?:(?:(（）)|（(?:([短中长])|([^）]*))）)：?|(.*))$\n?</string>
 		</dict>
 		<key>action-state</key>
 		<dict>
@@ -1573,8 +1733,6 @@
 			<string>^(?=$|\S)</string>
 			<key>end</key>
 			<string>^(?=$|\S)</string>
-			<key>name</key>
-			<string>meta.bigine.struct</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -2049,7 +2207,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>constant.character.bigine</string>
+					<string>variable.other.panel.bigine</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -2069,7 +2227,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.other.inherited-class.bigine</string>
+							<string>constant.variable.bigine</string>
 						</dict>
 					</dict>
 					<key>comment</key>
@@ -2090,7 +2248,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.other.inherited-class.bigine</string>
+							<string>constant.language.bigine</string>
 						</dict>
 					</dict>
 					<key>comment</key>
@@ -2120,7 +2278,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>constant.character.bigine</string>
+					<string>variable.other.panel.bigine</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -2153,7 +2311,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.type.structure.bigine</string>
+					<string>variable.other.structure.bigine</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -2173,7 +2331,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.other.inherited-class.bigine</string>
+							<string>variable.other.structure.bigine</string>
 						</dict>
 					</dict>
 					<key>comment</key>
@@ -2181,7 +2339,7 @@
 					<key>match</key>
 					<string>^\t\t\t(数据名)(：(\S+))$\n?</string>
 					<key>name</key>
-					<string>meta.bigine.panel.simple.item.data.name</string>
+					<string>meta.bigine.panel.simple.item.name</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -2194,7 +2352,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.other.inherited-class.bigine</string>
+							<string>constant.language.bigine</string>
 						</dict>
 					</dict>
 					<key>comment</key>
@@ -2202,7 +2360,7 @@
 					<key>match</key>
 					<string>^\t\t\t(数据类别)(：(星|心))$\n?</string>
 					<key>name</key>
-					<string>meta.bigine.panel.simple.item.data.type</string>
+					<string>meta.bigine.panel.simple.item.type</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -2499,7 +2657,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>constant.language.bigine</string>
+					<string>variable.other.structure.bigine</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -2540,7 +2698,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>entity.other.inherited-class.bigine</string>
+							<string>constant.language.bigine</string>
 						</dict>
 					</dict>
 					<key>comment</key>

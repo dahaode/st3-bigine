@@ -1,0 +1,7 @@
+{
+    "scope": "text.bigine meta.bigine.panel.coll - meta.bigine.panel.coll.name - meta.bigine.panel.coll.structure",
+    "completions": [
+        { "trigger": "使用集合", "contents": "使用集合：" },
+        { "trigger": "集合结构", "contents": "集合结构：" }
+    ]
+}

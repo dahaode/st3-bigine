@@ -13,6 +13,7 @@
         { "trigger": "特写", "contents": "特写：" },
         { "trigger": "状态", "contents": "状态：" },
         { "trigger": "面板", "contents": "面板：" },
-        { "trigger": "事件", "contents": "事件：" },
+        { "trigger": "结构", "contents": "结构：" },
+        { "trigger": "事件", "contents": "事件：" }
     ]
 }

@@ -1,0 +1,7 @@
+{
+    "scope": "text.bigine meta.bigine.panel.simple.item - meta.bigine.panel.simple.item.name - meta.bigine.panel.simple.item.type",
+    "completions": [
+        { "trigger": "数据名", "contents": "数据名：" },
+        { "trigger": "数据类别", "contents": "数据类别：" }
+    ]
+}

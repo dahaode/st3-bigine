@@ -1,0 +1,6 @@
+{
+    "scope": "text.bigine meta.bigine.panel.simple - meta.bigine.panel.simple.item",
+    "completions": [
+        { "trigger": "条目", "contents": "条目：${0:条目名称}" }
+    ]
+}

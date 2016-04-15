@@ -668,13 +668,15 @@ repository:
       '5': {name: invalid.illegal.bigine}
 
   action-camera-set:
-    match: ^\t+(设置镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)：?|(.*))$\n?
+    match: ^\t+(设置镜头)(?:(?:|(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?
     captures:
       '1': {name: keyword.operator.bigine}
       '2': {name: invalid.illegal.bigine}
       '3': {name: constant.language.bigine}
       '4': {name: invalid.illegal.bigine}
-      '5': {name: invalid.illegal.bigine}
+      '5': {name: constant.language.bigine}
+      '6': {name: invalid.illegal.bigine}
+      '7': {name: invalid.illegal.bigine}
 
   action-camera-reset:
     match: ^\t+(复位镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)：?|(.*))$\n?
@@ -686,7 +688,7 @@ repository:
       '5': {name: invalid.illegal.bigine}
 
   action-camera-zoom:
-    match: ^\t+(放大镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?
+    match: ^\t+(放大镜头)(?:(?:|(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?
     captures:
       '1': {name: keyword.operator.bigine}
       '2': {name: invalid.illegal.bigine}
@@ -697,7 +699,7 @@ repository:
       '7': {name: invalid.illegal.bigine}
 
   action-camera-move:
-    match: ^\t+(移动镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?
+    match: ^\t+(移动镜头)(?:(?:|(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?
     captures:
       '1': {name: keyword.operator.bigine}
       '2': {name: invalid.illegal.bigine}

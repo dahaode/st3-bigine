@@ -305,7 +305,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\t+(移动镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?</string>
+			<string>^\t+(移动镜头)(?:(?:|(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?</string>
 		</dict>
 		<key>action-camera-reset</key>
 		<dict>
@@ -367,11 +367,21 @@
 				<key>5</key>
 				<dict>
 					<key>name</key>
+					<string>constant.language.bigine</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
 					<string>invalid.illegal.bigine</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\t+(设置镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)：?|(.*))$\n?</string>
+			<string>^\t+(设置镜头)(?:(?:|(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?</string>
 		</dict>
 		<key>action-camera-shake</key>
 		<dict>
@@ -427,7 +437,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\t+(放大镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?</string>
+			<string>^\t+(放大镜头)(?:(?:|(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?</string>
 		</dict>
 		<key>action-choose</key>
 		<dict>

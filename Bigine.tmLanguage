@@ -338,7 +338,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\t+(复位镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)：?|(.*))$\n?</string>
+			<string>^\t+(复位镜头)(?:(?:|(（）)|（(?:([快中慢])|([^）]*))）)：?|(.*))$\n?</string>
 		</dict>
 		<key>action-camera-set</key>
 		<dict>
@@ -352,36 +352,21 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>invalid.illegal.bigine</string>
+					<string>constant.language.bigine</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>constant.language.bigine</string>
+					<string>invalid.illegal.bigine</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>invalid.illegal.bigine</string>
 				</dict>
-				<key>5</key>
-				<dict>
-					<key>name</key>
-					<string>constant.language.bigine</string>
-				</dict>
-				<key>6</key>
-				<dict>
-					<key>name</key>
-					<string>invalid.illegal.bigine</string>
-				</dict>
-				<key>7</key>
-				<dict>
-					<key>name</key>
-					<string>invalid.illegal.bigine</string>
-				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\t+(设置镜头)(?:(?:|(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?</string>
+			<string>^\t+(设置镜头)(?:(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?</string>
 		</dict>
 		<key>action-camera-shake</key>
 		<dict>
@@ -703,7 +688,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\t+(切幕动画)(?:(?:(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗)|([^）]*))）)：?|(.*))?$\n?</string>
+			<string>^\t+(切幕动画)(?:(?:|(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗)|([^）]*))）)：?|(.*))?$\n?</string>
 		</dict>
 		<key>action-def-coll</key>
 		<dict>
@@ -1175,7 +1160,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\t+(停顿)(?:(?:(（）)|（(?:([短中长])|([^）]*))）)：?|(.*))$\n?</string>
+			<string>^\t+(停顿)(?:(?:|(（）)|（(?:([短中长])|([^）]*))）)：?|(.*))$\n?</string>
 		</dict>
 		<key>action-state</key>
 		<dict>

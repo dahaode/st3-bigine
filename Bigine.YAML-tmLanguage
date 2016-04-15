@@ -659,7 +659,7 @@ repository:
       '7': {name: invalid.illegal.bigine}
 
   action-pause:
-    match: ^\t+(停顿)(?:(?:(（）)|（(?:([短中长])|([^）]*))）)：?|(.*))$\n?
+    match: ^\t+(停顿)(?:(?:|(（）)|（(?:([短中长])|([^）]*))）)：?|(.*))$\n?
     captures:
       '1': {name: keyword.operator.bigine}
       '2': {name: invalid.illegal.bigine}
@@ -668,18 +668,15 @@ repository:
       '5': {name: invalid.illegal.bigine}
 
   action-camera-set:
-    match: ^\t+(设置镜头)(?:(?:|(（）)|（(?:([快中慢])|([^）]*))）)(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?
+    match: ^\t+(设置镜头)(?:(?:：(左上|上|右上|左|中|右|左下|下|右下)|(：.*))|(：.*))$\n?
     captures:
       '1': {name: keyword.operator.bigine}
-      '2': {name: invalid.illegal.bigine}
-      '3': {name: constant.language.bigine}
+      '2': {name: constant.language.bigine}
+      '3': {name: invalid.illegal.bigine}
       '4': {name: invalid.illegal.bigine}
-      '5': {name: constant.language.bigine}
-      '6': {name: invalid.illegal.bigine}
-      '7': {name: invalid.illegal.bigine}
 
   action-camera-reset:
-    match: ^\t+(复位镜头)(?:(?:(（）)|（(?:([快中慢])|([^）]*))）)：?|(.*))$\n?
+    match: ^\t+(复位镜头)(?:(?:|(（）)|（(?:([快中慢])|([^）]*))）)：?|(.*))$\n?
     captures:
       '1': {name: keyword.operator.bigine}
       '2': {name: invalid.illegal.bigine}
@@ -716,7 +713,7 @@ repository:
 
   action-curtains:
     # match: ^\t+(切幕动画)(（((淡出淡入)|(水平百叶窗)|(垂直百叶窗))）)?$\n?
-    match: ^\t+(切幕动画)(?:(?:(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗)|([^）]*))）)：?|(.*))?$\n?
+    match: ^\t+(切幕动画)(?:(?:|(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗)|([^）]*))）)：?|(.*))?$\n?
     captures:
       '1': {name: keyword.operator.bigine}
       '2': {name: invalid.illegal.bigine}

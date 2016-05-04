@@ -501,12 +501,6 @@ repository:
         '1': {name: keyword.operator.bigine}
         '2': {name: constant.numeric.bigine}
         '3': {name: invalid.illegal.bigine}
-    - match: ^\t+(高级评分)(?:（([^，\s]+)）|(（.*）))：?$\n?
-      name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
-      captures:
-        '1': {name: keyword.operator.bigine}
-        '2': {name: variable.other.state.bigine}
-        '3': {name: invalid.illegal.bigine}
 
   action-director:
     patterns:
@@ -562,11 +556,14 @@ repository:
         '3': {name: invalid.illegal.bigine}
         '4': {name: entity.other.attribute-name.bigine}
         '5': {name: invalid.illegal.bigine}
-    - match: ^\t+(评分)(?:（(完美|优秀|及格)）|(（.*）))：?$\n?
+    - match: ^\t+(评分)(?:（(传奇|超绝|完美|优秀|及格)(?:|，([^，\s]+)|(，.*))）|(（.*）))：?$\n?
+      name: meta.bigine.ref.state.comma meta.bigine.after.comma
       captures:
         '1': {name: keyword.control.bigine}
         '2': {name: constant.language.bigine}
-        '3': {name: invalid.illegal.bigine}
+        '3': {name: variable.other.state.bigine}
+        '4': {name: invalid.illegal.bigine}
+        '5': {name: invalid.illegal.bigine}
     - match: ^\t+(关闭特写|移动中止|停止音乐)：?$\n?
       captures:
         '1': {name: keyword.control.bigine}

@@ -1343,6 +1343,52 @@
 					<key>match</key>
 					<string>^\t+(游戏(?:完结|失败)|循环中止)：?$\n?</string>
 				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.bigine</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>constant.numeric.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\t+(打赏)(?:（([1-9]\d*)）|(（.*）))：?$\n?</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.bigine</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.state.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\t+(高级评分)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<key>name</key>
+					<string>meta.bigine.ref.state.bracket meta.bigine.after.bracket</string>
+				</dict>
 			</array>
 		</dict>
 		<key>action-words</key>

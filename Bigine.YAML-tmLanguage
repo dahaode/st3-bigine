@@ -496,6 +496,17 @@ repository:
     - match: ^\t+(游戏(?:完结|失败)|循环中止)：?$\n?
       captures:
         '1': {name: keyword.operator.bigine}
+    - match: ^\t+(打赏)(?:（([1-9]\d*)）|(（.*）))：?$\n?
+      captures:
+        '1': {name: keyword.operator.bigine}
+        '2': {name: constant.numeric.bigine}
+        '3': {name: invalid.illegal.bigine}
+    - match: ^\t+(高级评分)(?:（([^，\s]+)）|(（.*）))：?$\n?
+      name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
+      captures:
+        '1': {name: keyword.operator.bigine}
+        '2': {name: variable.other.state.bigine}
+        '3': {name: invalid.illegal.bigine}
 
   action-director:
     patterns:

@@ -537,16 +537,21 @@
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>invalid.illegal.bigine</string>
+							<string>constant.numeric.bigine</string>
 						</dict>
 						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+						<key>6</key>
 						<dict>
 							<key>name</key>
 							<string>string.quoted.double.bigine</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(添加选项)(?:（([^，\s]+)，([^，\s]+)）|(（.*）))(?:|：(.*))$\n?</string>
+					<string>^\t+(添加选项)(?:（([^，\s]+)，([^，\s]+)(?:|，([1-9]\d*))）|(（.*）))(?:|：(.*))$\n?</string>
 					<key>name</key>
 					<string>meta.bigine.ref.choose.bracket meta.bigine.after.bracket</string>
 				</dict>
@@ -1598,21 +1603,26 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>invalid.illegal.bigine</string>
+							<string>constant.numeric.bigine</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>string.quoted.double.bigine</string>
+							<string>invalid.illegal.bigine</string>
 						</dict>
 						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>string.quoted.double.bigine</string>
+						</dict>
+						<key>5</key>
 						<dict>
 							<key>name</key>
 							<string>invalid.illegal.bigine</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(?:(\S+?)|(.*))(?:：(\S(?:|.*\S))|(：.*))$</string>
+					<string>^\t+(?:([^（）\s]+?)(?:|（([1-9]\d*)）)|(.*))(?:：(\S(?:|.*\S))|(：.*))$</string>
 				</dict>
 				<dict>
 					<key>captures</key>

@@ -1,7 +1,7 @@
 import sublime, sublime_plugin, webbrowser, http.client, json, re
 
 class BigineUpdateCommand(sublime_plugin.WindowCommand):
-    __version = '0.2.2'
+    __version = '0.2.3'
 
     def run(self):
         try:

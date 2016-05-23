@@ -340,12 +340,13 @@ repository:
 
   option-per-line:
     patterns:
-    - match: ^\t+(?:(\S+?)|(.*))(?:：(\S(?:|.*\S))|(：.*))$
+    - match: ^\t+(?:([^（）\s]+?)(?:|（([1-9]\d*)）)|(.*))(?:：(\S(?:|.*\S))|(：.*))$
       captures:
         '1': {name: constant.character.bigine}
-        '2': {name: invalid.illegal.bigine}
-        '3': {name: string.quoted.double.bigine}
-        '4': {name: invalid.illegal.bigine}
+        '2': {name: constant.numeric.bigine}
+        '3': {name: invalid.illegal.bigine}
+        '4': {name: string.quoted.double.bigine}
+        '5': {name: invalid.illegal.bigine}
     - match: ^\t+(\S(?:|.*\S))$
       captures:
         '1': {name: constant.character.bigine}
@@ -376,14 +377,15 @@ repository:
       patterns:
       - include: '#option-per-line'
       - include: '#illegal'
-    - match: ^\t+(添加选项)(?:（([^，\s]+)，([^，\s]+)）|(（.*）))(?:|：(.*))$\n?
+    - match: ^\t+(添加选项)(?:（([^，\s]+)，([^，\s]+)(?:|，([1-9]\d*))）|(（.*）))(?:|：(.*))$\n?
       name: meta.bigine.ref.choose.bracket meta.bigine.after.bracket
       captures:
         '1': {name: keyword.operator.bigine}
         '2': {name: variable.other.choose.bigine}
         '3': {name: constant.character.bigine}
-        '4': {name: invalid.illegal.bigine}
-        '5': {name: string.quoted.double.bigine}
+        '4': {name: constant.numeric.bigine}
+        '5': {name: invalid.illegal.bigine}
+        '6': {name: string.quoted.double.bigine}
     - match: ^\t+(去除选项)(?:（([^，\s]+)，([^，\s]+)）|(（.*）))：?$\n?
       name: meta.bigine.ref.choose.bracket meta.bigine.after.bracket
       captures:

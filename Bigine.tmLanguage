@@ -844,7 +844,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(设置人物|人物出场)(?:|（([左中右])）|(（.*）))(?:：([^，\s](?:|[^，]*[^，\s]))(?:|，([^，\s]+))|(：.*))$\n?</string>
+					<string>^\t+(设置人物|人物出场)(?:|（(最左|左|左中|中|右中|右|最右)）|(（.*）))(?:：([^，\s](?:|[^，]*[^，\s]))(?:|，([^，\s]+))|(：.*))$\n?</string>
 					<key>name</key>
 					<string>meta.bigine.ref.char.colon meta.bigine.after.colon meta.bigine.ref.pose.comma meta.bigine.after.comma</string>
 				</dict>
@@ -1100,7 +1100,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(人物移动)(?:（([^，\s]+)）|(（.*）))(?:：([左中右])|(：.*))$\n?</string>
+					<string>^\t+(人物移动)(?:（([^，\s]+)）|(（.*）))(?:：(最左|左|左中|中|右中|右|最右)|(：.*))$\n?</string>
 					<key>name</key>
 					<string>meta.bigine.ref.char.bracket meta.bigine.after.bracket</string>
 				</dict>

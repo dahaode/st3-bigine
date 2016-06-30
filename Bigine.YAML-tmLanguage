@@ -539,7 +539,14 @@ repository:
         '1': {name: keyword.control.bigine}
         '2': {name: entity.other.inherited-class.bigine}
         '3': {name: invalid.illegal.bigine}
-    - match: ^\t+((?:设置|进入)房间)(?:（([^，\s]+)）|(（.*）))：?$\n?
+    - match: ^\t+(设置房间)(?:（([^，\s]+)(?:|，([^，\s]+))）|(（.*）))：?$\n?
+      name: meta.bigine.ref.room.bracket meta.bigine.after.bracket
+      captures:
+        '1': {name: keyword.control.bigine}
+        '2': {name: entity.other.inherited-class.bigine}
+        '3': {name: entity.other.attribute-name.bigine}
+        '4': {name: invalid.illegal.bigine}
+    - match: ^\t+(进入房间)(?:（([^，\s]+)）|(（.*）))：?$\n?
       name: meta.bigine.ref.room.bracket meta.bigine.after.bracket
       captures:
         '1': {name: keyword.control.bigine}
@@ -721,15 +728,28 @@ repository:
     captures:
       '1': {name: keyword.operator.bigine}
 
-  action-curtains:
-    # match: ^\t+(切幕动画)(（((淡出淡入)|(水平百叶窗)|(垂直百叶窗))）)?$\n?
-    match: ^\t+(切幕动画)(?:(?:|(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗)|([^）]*))）)：?|(.*))?$\n?
+  action-curtain:
+    match: ^\t+(切幕动画)(?:(?:|(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗|渐变)|([^）]*))）)：?|(.*))?$\n?
     captures:
       '1': {name: keyword.operator.bigine}
       '2': {name: invalid.illegal.bigine}
       '3': {name: constant.language.bigine}
       '4': {name: invalid.illegal.bigine}
       '5': {name: invalid.illegal.bigine}
+
+  action-motion:
+    match: ^\t+(神态动画)(?:(?:|(（）)|（(?:(渐变|默认)|([^）]*))）)：?|(.*))?$\n?
+    captures:
+      '1': {name: keyword.operator.bigine}
+      '2': {name: invalid.illegal.bigine}
+      '3': {name: constant.language.bigine}
+      '4': {name: invalid.illegal.bigine}
+      '5': {name: invalid.illegal.bigine}
+
+  action-status-toggle:
+    match: ^\t+((?:显示|隐藏)状态栏)：?$\n?
+    captures:
+      '1': {name: keyword.operator.bigine}
 
   action:
     patterns:
@@ -750,7 +770,9 @@ repository:
     - include: '#action-camera-zoom'
     - include: '#action-camera-move'
     - include: '#action-camera-shake'
-    - include: '#action-curtains'
+    - include: '#action-curtain'
+    - include: '#action-motion'
+    - include: '#action-status-toggle'
     - include: '#illegal'
 
   scene:

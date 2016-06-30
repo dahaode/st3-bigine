@@ -92,7 +92,15 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#action-curtains</string>
+					<string>#action-curtain</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#action-motion</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#action-status-toggle</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -662,7 +670,7 @@
 			<key>match</key>
 			<string>^(\t\t)(删除元素)(?:(?:(（）)|（(\S+)）)(?:(?:：(\S+))|(：))|(：.*))$\n?</string>
 		</dict>
-		<key>action-curtains</key>
+		<key>action-curtain</key>
 		<dict>
 			<key>captures</key>
 			<dict>
@@ -693,7 +701,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\t+(切幕动画)(?:(?:|(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗)|([^）]*))）)：?|(.*))?$\n?</string>
+			<string>^\t+(切幕动画)(?:(?:|(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗|渐变)|([^）]*))）)：?|(.*))?$\n?</string>
 		</dict>
 		<key>action-def-coll</key>
 		<dict>
@@ -960,11 +968,40 @@
 						<key>3</key>
 						<dict>
 							<key>name</key>
+							<string>entity.other.attribute-name.bigine</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
 							<string>invalid.illegal.bigine</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+((?:设置|进入)房间)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<string>^\t+(设置房间)(?:（([^，\s]+)(?:|，([^，\s]+))）|(（.*）))：?$\n?</string>
+					<key>name</key>
+					<string>meta.bigine.ref.room.bracket meta.bigine.after.bracket</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.bigine</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.inherited-class.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\t+(进入房间)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
 					<key>name</key>
 					<string>meta.bigine.ref.room.bracket meta.bigine.after.bracket</string>
 				</dict>
@@ -1105,6 +1142,39 @@
 					<string>meta.bigine.ref.char.bracket meta.bigine.after.bracket</string>
 				</dict>
 			</array>
+		</dict>
+		<key>action-motion</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.bigine</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>constant.language.bigine</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\t+(神态动画)(?:(?:|(（）)|（(?:(渐变|默认)|([^）]*))）)：?|(.*))?$\n?</string>
 		</dict>
 		<key>action-mxximum</key>
 		<dict>
@@ -1383,6 +1453,19 @@
 					<string>^\t+(打赏)(?:（([1-9]\d*)）|(（.*）))：?$\n?</string>
 				</dict>
 			</array>
+		</dict>
+		<key>action-status-toggle</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.bigine</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\t+((?:显示|隐藏)状态栏)：?$\n?</string>
 		</dict>
 		<key>action-words</key>
 		<dict>

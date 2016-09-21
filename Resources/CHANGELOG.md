@@ -79,3 +79,5 @@ v0.2.6 for Bigine v0.23.0
 
 v0.2.7 for Bigine v0.24.0
 ---
+
+1. 修改默认主题为 bigood ；

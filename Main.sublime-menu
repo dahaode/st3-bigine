@@ -30,12 +30,12 @@
 						"caption": "-"
 					},
 					{
-						"caption": "v0.2.6 for Bigine v0.23.0",
+						"caption": "v0.2.7 说明",
 						"id": "bigine_changelog",
 						"command": "bigine_changelog"
 					},
 					{
-						"caption": "检查更新…",
+						"caption": "更新插件…",
 						"id": "bigine_update",
 						"command": "bigine_update"
 					}

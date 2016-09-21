@@ -586,6 +586,12 @@ repository:
         '3': {name: invalid.illegal.bigine}
         '4': {name: constant.language.bigine}
         '5': {name: invalid.illegal.bigine}
+    - match: ^\t+(设置音量)(?:（(音乐|音效|环境)，(100|[1-9]?\d)）|(：.*))$\n?
+      captures:
+        '1': {name: keyword.control.bigine}
+        '2': {name: constant.language.bigine}
+        '3': {name: constant.numeric.bigine}
+        '4': {name: invalid.illegal.bigine}
 
   action-words:
     begin: ^\t+(?:([旁独]白|提示)(?=：)|(对白)(?=（))

@@ -100,7 +100,8 @@ class BigineInspectCommand(sublime_plugin.TextCommand):
         '停顿': 'tingdun',
         '环境音乐': 'huanjingyinyue',
         '停止音效': 'tingzhiyinxiao',
-        '环境静音': 'huanjingjingyin'
+        '环境静音': 'huanjingjingyin',
+        '设置音量': 'shezhiyinliang'
     }
 
     def run(self, edit):

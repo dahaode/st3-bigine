@@ -1151,6 +1151,33 @@
 					<key>name</key>
 					<string>meta.bigine.ref.char.bracket meta.bigine.after.bracket</string>
 				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.bigine</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>constant.language.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>constant.numeric.bigine</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\t+(设置音量)(?:（(音乐|音效|环境)，(100|[1-9]?\d)）|(：.*))$\n?</string>
+				</dict>
 			</array>
 		</dict>
 		<key>action-motion</key>

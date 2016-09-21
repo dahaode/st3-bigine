@@ -1115,7 +1115,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(关闭特写|移动中止|停止音乐)：?$\n?</string>
+					<string>^\t+(关闭特写|移动中止|停止音乐|停止音效)：?$\n?</string>
 				</dict>
 				<dict>
 					<key>captures</key>

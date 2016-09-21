@@ -1,8 +1,37 @@
-import sublime, sublime_plugin
+import sublime, sublime_plugin, http.client, json
 
 class ThemeHandler(sublime_plugin.EventListener):
+    __themes = {}
+
+    __loading = False
+
+    def __list(self, view):
+        if not len(view.find_by_selector('text.bigine')) or self.__loading:
+            return False
+        key = 'bigine.status'
+        if len(self.__themes):
+            return True
+        self.__loading = True
+        sublime.status_message('读取主题列表…')
+        try:
+            conn = http.client.HTTPConnection('s.dahao.de', timeout=3)
+            conn.request('GET', '/theme/index.json')
+            resp = conn.getresponse()
+            if 200 != resp.status:
+                conn.close()
+                raise ValueError('')
+            self.__themes = json.loads(resp.read().decode('utf-8'))
+            conn.close()
+            sublime.status_message('')
+            view.set_status(key, '主题列表就绪')
+        except:
+            sublime.status_message('读取主题列表…失败 ₍₍ (̨̡ ‾᷄ᗣ‾᷅ )̧̢ ₎₎')
+            self.__themes = {}
+        self.__loading = False
+        return 0 < len(self.__themes)
+
     def __validate(self, view):
-        if not len(view.find_by_selector('text.bigine')):
+        if not self.__list(view):
             return
         regions = view.find_by_selector('meta.bigine.theme constant.language')
         key = 'bigine.error.theme'

@@ -896,11 +896,16 @@
 						<key>3</key>
 						<dict>
 							<key>name</key>
+							<string>constant.numeric.bigine</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
 							<string>invalid.illegal.bigine</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(播放音乐)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<string>^\t+(播放音乐)(?:（([^，\s]+)(?:|，(100|[1-9]?\d))）|(（.*）))：?$\n?</string>
 					<key>name</key>
 					<string>meta.bigine.ref.bgm.bracket meta.bigine.after.bracket</string>
 				</dict>

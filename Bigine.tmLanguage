@@ -905,7 +905,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(播放音乐)(?:（([^，\s]+)(?:|，(100|[1-9]?\d))）|(（.*）))：?$\n?</string>
+					<string>^\t+((?:播放|环境)音乐)(?:（([^，\s]+)(?:|，(100|[1-9]?\d))）|(（.*）))：?$\n?</string>
 					<key>name</key>
 					<string>meta.bigine.ref.bgm.bracket meta.bigine.after.bracket</string>
 				</dict>

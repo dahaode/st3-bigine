@@ -97,7 +97,8 @@ class BigineInspectCommand(sublime_plugin.TextCommand):
         '设置镜头': 'shezhijingtou',
         '移动镜头': 'yidongjingtou',
         '复位镜头': 'fuweijingtou',
-        '停顿': 'tingdun'
+        '停顿': 'tingdun',
+        '环境音乐': 'huanjingyinyue'
     }
 
     def run(self, edit):

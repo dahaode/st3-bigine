@@ -30,7 +30,7 @@
 						"caption": "-"
 					},
 					{
-						"caption": "v0.2.7 说明",
+						"caption": "v0.2.8 说明",
 						"id": "bigine_changelog",
 						"command": "bigine_changelog"
 					},

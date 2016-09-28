@@ -759,6 +759,26 @@ repository:
     captures:
       '1': {name: keyword.operator.bigine}
 
+  action-note:
+    match: ^\t+(?:(全屏文本)|(全屏文本)(?:(（）)|(?:（(?:([开关])|([^）]*))）))(.*))$\n?
+    captures:
+      '1': {name: invalid.illegal.bigine}
+      '2': {name: keyword.operator.bigine}
+      '3': {name: invalid.illegal.bigine}
+      '4': {name: constant.language.bigine}
+      '5': {name: invalid.illegal.bigine}
+      '6': {name: invalid.illegal.bigine}
+
+  action-note-clear:
+    match: ^\t+(清除文本)$\n?
+    captures:
+      '1': {name: keyword.operator.bigine}
+
+  action-note-hide:
+    match: ^\t+(隐藏文本)$\n?
+    captures:
+      '1': {name: keyword.operator.bigine}
+
   action:
     patterns:
     - include: '#action-choose'
@@ -781,6 +801,9 @@ repository:
     - include: '#action-curtain'
     - include: '#action-motion'
     - include: '#action-status-toggle'
+    - include: '#action-note'
+    - include: '#action-note-clear'
+    - include: '#action-note-hide'
     - include: '#illegal'
 
   scene:

@@ -104,6 +104,18 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#action-note</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#action-note-clear</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#action-note-hide</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#illegal</string>
 				</dict>
 			</array>
@@ -1252,6 +1264,70 @@
 					<string>#illegal</string>
 				</dict>
 			</array>
+		</dict>
+		<key>action-note</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.bigine</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>constant.language.bigine</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\t+(?:(全屏文本)|(全屏文本)(?:(（）)|(?:（(?:([开关])|([^）]*))）))(.*))$\n?</string>
+		</dict>
+		<key>action-note-clear</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.bigine</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\t+(清除文本)$\n?</string>
+		</dict>
+		<key>action-note-hide</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.operator.bigine</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\t+(隐藏文本)$\n?</string>
 		</dict>
 		<key>action-pause</key>
 		<dict>

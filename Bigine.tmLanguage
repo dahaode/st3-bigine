@@ -1563,7 +1563,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(打赏)(?:（([1-9]\d*)）|(（.*）))：?$\n?</string>
+					<string>^\t+(打赏|解锁)(?:（([1-9]\d*)）|(（.*）))：?$\n?</string>
 				</dict>
 			</array>
 		</dict>

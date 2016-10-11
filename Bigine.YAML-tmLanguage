@@ -498,7 +498,7 @@ repository:
     - match: ^\t+(游戏(?:完结|失败)|循环中止)：?$\n?
       captures:
         '1': {name: keyword.operator.bigine}
-    - match: ^\t+(打赏)(?:（([1-9]\d*)）|(（.*）))：?$\n?
+    - match: ^\t+(打赏|解锁)(?:（([1-9]\d*)）|(（.*）))：?$\n?
       captures:
         '1': {name: keyword.operator.bigine}
         '2': {name: constant.numeric.bigine}

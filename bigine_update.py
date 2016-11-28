@@ -19,6 +19,6 @@ class BigineUpdateCommand(sublime_plugin.WindowCommand):
             if self.__version != latestVersion:
                 isOK = sublime.ok_cancel_dialog('检测到存在最新版本' + latestVersion + ', 是否进行更新？')
             if isOK:
-                webbrowser.open_new_tab('http://dahao.de/yinqing/gongju.html')
+                webbrowser.open_new_tab('http://dahao.de/bigine/bigine-sdk.html')
         except:
             sublime.status_message('读取最新版本信息…失败 ₍₍ (̨̡ ‾᷄ᗣ‾᷅ )̧̢ ₎₎')

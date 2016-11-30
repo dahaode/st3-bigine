@@ -28,7 +28,7 @@ class BigineInspectCommand(sublime_plugin.TextCommand):
         '展示特写': 'texielei',
         '关闭特写': 'texielei',
         '特写': 'texielei',
-        '切幕动画': 'qiemudonghua',
+        '切幕动画': 'donghualei',
         '抖动镜头': 'donghualei',
         '放大镜头': 'donghualei',
         '设置镜头': 'donghualei',

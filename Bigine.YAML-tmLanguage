@@ -495,7 +495,7 @@ repository:
         '1': {name: keyword.operator.bigine}
         '2': {name: string.quoted.double.bigine}
         '3': {name: invalid.illegal.bigine}
-    - match: ^\t+(游戏(?:完结|失败)|循环中止)：?$\n?
+    - match: ^\t+((?:游戏|作品)(?:完结|失败)|循环中止)：?$\n?
       captures:
         '1': {name: keyword.operator.bigine}
     - match: ^\t+(打赏|解锁)(?:（([1-9]\d*)）|(（.*）))：?$\n?

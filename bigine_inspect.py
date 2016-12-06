@@ -48,6 +48,7 @@ class BigineInspectCommand(sublime_plugin.TextCommand):
         '自动播放': 'zidongbofang',
         '自动存档': 'zidongcundang',
         '游戏完结': 'youxiwanjie',
+        '作品完结': 'youxiwanjie',
         '选择': 'xuanze',
         '如果': 'ruguo',
         '那么': 'name',

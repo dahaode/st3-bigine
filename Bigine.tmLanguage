@@ -1541,7 +1541,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\t+(游戏(?:完结|失败)|循环中止)：?$\n?</string>
+					<string>^\t+((?:游戏|作品)(?:完结|失败)|循环中止)：?$\n?</string>
 				</dict>
 				<dict>
 					<key>captures</key>

@@ -1,7 +1,7 @@
 {
     "scope": "text.bigine meta.bigine.scene - meta.bigine.scene.type - meta.bigine.literal",
     "completions": [
-        { "trigger": "选择", "contents": "选择${1:（${2:数据名}）}：${0:选择名}" },
+        { "trigger": "选择", "contents": "选择${1:（${2:数据名}，${3:时间}，${4:默认选项}）}：${0:选择名}" },
         { "trigger": "最小数据", "contents": "最小数据${1:（${2:数据名}）}："},
         { "trigger": "最大数据", "contents": "最大数据${1:（${2:数据名}）}："},
         { "trigger": "数据合值", "contents": "数据合值（${1:数据名}）："},
@@ -65,6 +65,7 @@
         { "trigger": "设置音量", "contents": "设置音量（${1:音乐}，${2:100}）" },
         { "trigger": "全屏文本", "contents": "全屏文本（${1:开}）" },
         "清除文本",
-        "隐藏文本"
+        "隐藏文本",
+        { "trigger": "设置天气", "contents": "设置天气（${1:晴}）" },
      ]
 }

@@ -116,6 +116,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#action-weather</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#illegal</string>
 				</dict>
 			</array>
@@ -450,7 +454,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(\t+)(选择)(?:|（([^，\s]+)）|(（.*）))(?:|：(\S+)|(：.*))$\n?</string>
+					<string>^(\t+)(选择)(?:|（(([^，\s]+)|(.*))，(?:)|([1-9]\d*)，(([^，\s]+)|(.*))）|(（.*）))(?:|：(\S+)|(：.*))$\n?</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>2</key>
@@ -466,7 +470,7 @@
 						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>invalid.illegal.bigine</string>
+							<string>constant.numeric.bigine</string>
 						</dict>
 						<key>5</key>
 						<dict>
@@ -1580,6 +1584,29 @@
 			<key>match</key>
 			<string>^\t+((?:显示|隐藏)状态栏)：?$\n?</string>
 		</dict>
+		<key>action-weather</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.bigine</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>constant.language.bigine</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^\t+(设置天气)(?:（((?:小|中|大)(?:雨|雪)|晴)）|(（.*）))：?$</string>
+		</dict>
 		<key>action-words</key>
 		<dict>
 			<key>begin</key>
@@ -2020,6 +2047,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#struct-backplay</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#illegal</string>
 				</dict>
 			</array>
@@ -2043,6 +2074,26 @@
 			<string>^(自动播放)(?:|：(.*))$\n?</string>
 			<key>name</key>
 			<string>meta.bigine.autoplay</string>
+		</dict>
+		<key>struct-backplay</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.modifier.bigine</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>^(显示回看)(?:|：(.*))$\n?</string>
+			<key>name</key>
+			<string>meta.bigine.backplay</string>
 		</dict>
 		<key>struct-cg</key>
 		<dict>

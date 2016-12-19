@@ -315,6 +315,13 @@ repository:
     - include: '#struct-panel-coll'
     - include: '#illegal'
 
+  struct-backplay:
+    match: ^(显示回看)(?:|：(.*))$\n?
+    name: meta.bigine.backplay
+    captures:
+      '1': {name: storage.modifier.bigine}
+      '2': {name: invalid.illegal.bigine}
+
   struct:
     begin: ^(?=$|\S)
     end: ^(?=$|\S)
@@ -331,6 +338,7 @@ repository:
     - include: '#struct-status'
     - include: '#struct-structure'
     - include: '#struct-panel'
+    - include: '#struct-backplay'
     - include: '#illegal'
 
   state-per-line:
@@ -353,14 +361,14 @@ repository:
 
   action-choose:
     patterns:
-    - begin: ^(\t+)(选择)(?:|（([^，\s]+)）|(（.*）))(?:|：(\S+)|(：.*))$\n?
+    - begin: ^(\t+)(选择)(?:|（(([^，\s]+)|(.*))，(?:)|([1-9]\d*)，(([^，\s]+)|(.*))）|(（.*）))(?:|：(\S+)|(：.*))$\n?
       end: ^(?!\1\t)
       name: meta.bigine.ref.state.bracket meta.bigine.after.bracket meta.bigine.ref.choose.colon meta.bigine.after.colon
       contentName: meta.bigine.literal
       beginCaptures:
         '2': {name: keyword.control.bigine}
         '3': {name: variable.other.state.bigine}
-        '4': {name: invalid.illegal.bigine}
+        '4': {name: constant.numeric.bigine}
         '5': {name: variable.other.choose.bigine}
         '6': {name: invalid.illegal.bigine}
       patterns:
@@ -779,6 +787,13 @@ repository:
     captures:
       '1': {name: keyword.operator.bigine}
 
+  action-weather:
+    match: ^\t+(设置天气)(?:（((?:小|中|大)(?:雨|雪)|晴)）|(（.*）))：?$
+    captures:
+      '1': {name: keyword.control.bigine}
+      '2': {name: constant.language.bigine}
+      '3': {name: invalid.illegal.bigine}
+
   action:
     patterns:
     - include: '#action-choose'
@@ -804,6 +819,7 @@ repository:
     - include: '#action-note'
     - include: '#action-note-clear'
     - include: '#action-note-hide'
+    - include: '#action-weather'
     - include: '#illegal'
 
   scene:

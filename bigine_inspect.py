@@ -106,13 +106,13 @@ class BigineInspectCommand(sublime_plugin.TextCommand):
         '素材包': 'sucaibao',
         '主题': 'zhuti',
         '人物': 'renwu',
-        '主角': 'zhujue'
-#        '游戏失败': 'youxishibai',
-#        '评分': 'pingfen',
-#        '设置天气': 'shezhitianqi',
-#        '音源': 'yinyue',
-#        '画面': 'texie',
-#        '天气': 'yinxiao',
+        '主角': 'zhujue',
+        '设置天气': 'shezhitianqi',
+#       '游戏失败': 'youxishibai',
+#       '评分': 'pingfen',
+#       '音源': 'yinyue',
+#       '画面': 'texie',
+#       '天气': 'yinxiao',
     }
 
     def run(self, edit):

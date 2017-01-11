@@ -745,13 +745,14 @@ repository:
       '1': {name: keyword.operator.bigine}
 
   action-curtain:
-    match: ^\t+(切幕动画)(?:(?:|(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗|渐变)|([^）]*))）)：?|(.*))?$\n?
+    match: ^\t+(切幕动画)(?:(?:|(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗|渐变)|([^）]*))）|（(?:(淡入淡出|水平百叶窗|垂直百叶窗|渐变))，([1-9]\d*)）)：?|(.*))?$\n?
     captures:
       '1': {name: keyword.operator.bigine}
       '2': {name: invalid.illegal.bigine}
       '3': {name: constant.language.bigine}
-      '4': {name: invalid.illegal.bigine}
+      '4': {name: constant.numeric.bigine}
       '5': {name: invalid.illegal.bigine}
+      '6': {name: invalid.illegal.bigine}
 
   action-motion:
     match: ^\t+(神态动画)(?:(?:|(（）)|（(?:(渐变|默认)|([^）]*))）)：?|(.*))?$\n?

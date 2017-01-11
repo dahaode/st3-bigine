@@ -708,16 +708,21 @@
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>invalid.illegal.bigine</string>
+					<string>constant.numeric.bigine</string>
 				</dict>
 				<key>5</key>
 				<dict>
 					<key>name</key>
 					<string>invalid.illegal.bigine</string>
 				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>invalid.illegal.bigine</string>
+				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\t+(切幕动画)(?:(?:|(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗|渐变)|([^）]*))）)：?|(.*))?$\n?</string>
+			<string>^\t+(切幕动画)(?:(?:|(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗|渐变)|([^）]*))）|（(?:(淡入淡出|水平百叶窗|垂直百叶窗|渐变))，([1-9]\d*)）)：?|(.*))?$\n?</string>
 		</dict>
 		<key>action-def-coll</key>
 		<dict>

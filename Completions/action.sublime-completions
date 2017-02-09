@@ -6,6 +6,7 @@
         { "trigger": "最大数据", "contents": "最大数据${1:（${2:数据名}）}："},
         { "trigger": "数据合值", "contents": "数据合值（${1:数据名}）："},
         { "trigger": "数据差值", "contents": "数据差值（${1:数据名}，${2:基数数据名}）："},
+        { "trigger": "数据倍值", "contents": "数据倍值（${1:数据名}）："},
         { "trigger": "且", "contents": "且：" },
         { "trigger": "或", "contents": "或：" },
         { "trigger": "那么", "contents": "那么：" },

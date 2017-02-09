@@ -71,7 +71,7 @@ class BigineInspectCommand(sublime_plugin.TextCommand):
         '且': 'qie&huo',
         '或': 'qie&huo',
         '对比数据': 'duibishuju',
-        '如果数据': 'ruguoshuju',
+        '如果数据': 'zuidashuju&zuixiaoshuju',
         '循环': 'xunhuan',
         '循环中止': 'xunhuan',
         '地图': 'ditu',

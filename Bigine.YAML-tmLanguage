@@ -440,6 +440,17 @@ repository:
       patterns:
       - include: '#state-per-line'
       - include: '#illegal'
+    - begin: ^(\t+)(数据倍值)(?:（([^，\s]+)）|(（.*）))：?$\n?
+      end: ^(?!\1\t)
+      name: meta.bigine.ref.state.bracket meta.bigine.after.bracket
+      contentName: meta.bigine.literal meta.bigine.ref.state.perline
+      beginCaptures:
+        '2': {name: keyword.operator.bigine}
+        '3': {name: variable.other.state.bigine}
+        '4': {name: invalid.illegal.bigine}
+      patterns:
+      - include: '#state-per-line'
+      - include: '#illegal'
 
   action-block:
     patterns:

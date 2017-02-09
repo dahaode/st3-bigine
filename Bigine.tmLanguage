@@ -211,6 +211,45 @@
 						</dict>
 					</array>
 				</dict>
+				<dict>
+					<key>begin</key>
+					<string>^(\t+)(数据倍值)(?:（([^，\s]+)）|(（.*）))：?$\n?</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.bigine</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.state.bigine</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>invalid.illegal.bigine</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.bigine.literal meta.bigine.ref.state.perline</string>
+					<key>end</key>
+					<string>^(?!\1\t)</string>
+					<key>name</key>
+					<string>meta.bigine.ref.state.bracket meta.bigine.after.bracket</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#state-per-line</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#illegal</string>
+						</dict>
+					</array>
+				</dict>
 			</array>
 		</dict>
 		<key>action-block</key>

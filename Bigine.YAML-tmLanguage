@@ -522,6 +522,9 @@ repository:
         '1': {name: keyword.operator.bigine}
         '2': {name: constant.numeric.bigine}
         '3': {name: invalid.illegal.bigine}
+    - match: ^\t+((?:jump|stop))：?$\n?
+      captures:
+        '1': {name: keyword.operator.bigine}
 
   action-director:
     patterns:

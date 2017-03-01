@@ -1613,6 +1613,18 @@
 					<key>match</key>
 					<string>^\t+(打赏|解锁)(?:（([1-9]\d*)）|(（.*）))：?$\n?</string>
 				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.operator.bigine</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\t+((?:jump|stop))：?$\n?</string>
+				</dict>
 			</array>
 		</dict>
 		<key>action-status-toggle</key>

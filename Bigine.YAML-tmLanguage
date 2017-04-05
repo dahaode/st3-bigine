@@ -706,7 +706,7 @@ repository:
       '7': {name: invalid.illegal.bigine}
 
   action-pause:
-    match: ^\t+(停顿)(?:(?:|(（）)|（(?:([短中长])|([^）]*))）)：?|(.*))$\n?
+    match: ^\t+(停顿)(?:(?:|(（）)|（(?:(.*)|([^）]*))）)：?|(.*))$\n?
     captures:
       '1': {name: keyword.operator.bigine}
       '2': {name: invalid.illegal.bigine}
@@ -754,9 +754,14 @@ repository:
       '7': {name: invalid.illegal.bigine}
 
   action-camera-shake:
-    match: ^\t+(抖动镜头)$\n?
+    match: ^\t+(抖动镜头)(?:(?:|(（）)|（(?:([1-9]\d*)|(.*))）|（(?:([1-9]\d*))，(?:([1-9]\d*)|(.*))）)：?|(.*))?$\n?
     captures:
       '1': {name: keyword.operator.bigine}
+      '2': {name: invalid.illegal.bigine}
+      '3': {name: constant.language.bigine}
+      '4': {name: constant.numeric.bigine}
+      '5': {name: invalid.illegal.bigine}
+      '6': {name: invalid.illegal.bigine}
 
   action-curtain:
     match: ^\t+(切幕动画)(?:(?:|(（）)|（(?:(淡入淡出|水平百叶窗|垂直百叶窗|渐变)|([^）]*))）|（(?:(淡入淡出|水平百叶窗|垂直百叶窗|渐变))，([1-9]\d*)）)：?|(.*))?$\n?
